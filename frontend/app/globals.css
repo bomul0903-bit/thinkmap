@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-primary: #7C3AED;
+  --color-primary-light: #A78BFA;
+  --color-primary-dark: #5B21B6;
+  --color-egg: #FCD34D;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Noto Sans KR', sans-serif;
+  color: #1F2937;
+  background-color: #ffffff;
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-purple-700 hover:bg-purple-800 text-white font-semibold py-3 px-6 rounded-full transition-all duration-200 shadow-md hover:shadow-lg active:scale-95;
+  }
+
+  .btn-outline {
+    @apply border-2 border-purple-700 text-purple-700 hover:bg-purple-700 hover:text-white font-semibold py-3 px-6 rounded-full transition-all duration-200;
+  }
+
+  .card {
+    @apply bg-white rounded-2xl shadow-md hover:shadow-xl transition-shadow duration-300 p-6;
+  }
+
+  .section-title {
+    @apply text-3xl font-black text-gray-900 text-center;
+  }
+
+  .section-subtitle {
+    @apply text-gray-500 text-center mt-3 text-lg;
+  }
+
+  .badge {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-sm font-medium;
+  }
+
+  .input-field {
+    @apply w-full border border-gray-300 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all;
+  }
+}
+
+/* 스크롤바 커스텀 */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+  background: #A78BFA;
+  border-radius: 3px;
+}
+
+/* 섹션 패딩 */
+.section {
+  padding: 80px 0;
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 60px 0;
+  }
+}
