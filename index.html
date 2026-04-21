@@ -3,7 +3,61 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>퍼플에그 | 초등 3·4학년 미래 역량 강화 프로그램</title>
+<meta name="theme-color" content="#7c3aed">
+
+<!-- ══════════════════════════════════════════════════════════
+     SEO 메타 태그
+     ══════════════════════════════════════════════════════════ -->
+<title>퍼플에그 | 초등 미래 역량 강화 프로그램 · AI 시대 창의교육</title>
+<meta name="description" content="퍼플에그는 초등 3~4학년을 위한 미래 역량 강화 프로그램입니다. 10대 프로젝트 기반 프로그램으로 비판적 사고력, 창의성, AI 협업 능력을 기릅니다. 6~8명 소규모 수업, 주 1회 2시간, 12주 완결형.">
+<meta name="keywords" content="퍼플에그, 초등 창의교육, 미래 역량, AI 교육, 프로젝트 학습, 비판적 사고, 창의성, 초등학원, 코딩교육, 사고력 수업">
+<meta name="author" content="퍼플에그 미래창의교육">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://example.com/">
+
+<!-- Open Graph (카카오톡·페이스북 공유) -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="퍼플에그 | 초등 미래 역량 강화 프로그램">
+<meta property="og:description" content="AI 시대, 아이 스스로 깨어나는 교육. 10대 핵심 프로그램 · 12주 완결형 · 6~8명 소규모 수업.">
+<meta property="og:image" content="https://example.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://example.com/">
+<meta property="og:site_name" content="퍼플에그">
+<meta property="og:locale" content="ko_KR">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="퍼플에그 | 초등 미래 역량 강화 프로그램">
+<meta name="twitter:description" content="AI 시대, 아이 스스로 깨어나는 교육. 10대 핵심 프로그램 · 12주 완결형.">
+<meta name="twitter:image" content="https://example.com/og-image.png">
+
+<!-- Favicon -->
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+<!-- 구조화된 데이터 (JSON-LD) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "EducationalOrganization",
+  "name": "퍼플에그 미래창의교육",
+  "description": "초등 3~4학년 대상 미래 역량 강화 프로그램",
+  "url": "https://example.com/",
+  "logo": "https://example.com/logo.png",
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "KR",
+    "addressLocality": "[시/군/구 입력]",
+    "streetAddress": "[도로명 주소 입력]"
+  },
+  "telephone": "[대표 전화번호 입력]",
+  "sameAs": []
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
@@ -12,12 +66,17 @@ body{font-family:'Noto Sans KR',sans-serif;color:#1f2937;background:#fff}
 ::-webkit-scrollbar{width:6px}
 ::-webkit-scrollbar-thumb{background:#a78bfa;border-radius:3px}
 a{text-decoration:none;color:inherit}
+button{font-family:inherit}
+:focus-visible{outline:3px solid #a78bfa;outline-offset:2px;border-radius:4px}
+
+/* 스크린 리더 전용 */
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 
 /* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,.95);backdrop-filter:blur(10px);border-bottom:1px solid #f3f4f6;transition:.3s}
 nav.scrolled{box-shadow:0 2px 20px rgba(0,0,0,.08)}
 .nav-inner{max-width:1100px;margin:0 auto;padding:0 20px;display:flex;align-items:center;justify-content:space-between;height:64px}
-.logo{display:flex;align-items:center;gap:8px;cursor:pointer}
+.logo{display:flex;align-items:center;gap:8px;cursor:pointer;background:none;border:none;padding:0}
 .logo-icon{width:38px;height:38px;background:linear-gradient(135deg,#7c3aed,#a78bfa);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:20px;box-shadow:0 4px 12px rgba(124,58,237,.3)}
 .logo-text{font-weight:900;font-size:20px;color:#7c3aed;letter-spacing:-0.5px}
 .nav-links{display:flex;align-items:center;gap:4px}
@@ -25,9 +84,13 @@ nav.scrolled{box-shadow:0 2px 20px rgba(0,0,0,.08)}
 .nav-links a:hover,.nav-links a.active{background:#f3f0ff;color:#7c3aed}
 .nav-cta{background:#7c3aed;color:#fff!important;padding:8px 18px!important;border-radius:99px!important;font-weight:700!important;box-shadow:0 4px 12px rgba(124,58,237,.25)!important}
 .nav-cta:hover{background:#6d28d9!important;transform:translateY(-1px)}
-.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px}
-.hamburger span{display:block;width:22px;height:2px;background:#6b7280;border-radius:2px;transition:.3s}
-.mobile-menu{display:none;position:fixed;top:64px;left:0;right:0;background:#fff;border-bottom:1px solid #f3f4f6;padding:16px 20px;z-index:99}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;background:none;border:none;width:40px;height:40px;align-items:center;justify-content:center}
+.hamburger span{display:block;width:22px;height:2px;background:#6b7280;border-radius:2px;transition:.3s;transform-origin:center}
+.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mobile-menu{display:none;position:fixed;top:64px;left:0;right:0;background:#fff;border-bottom:1px solid #f3f4f6;padding:16px 20px;z-index:99;max-height:calc(100vh - 64px);overflow-y:auto}
+.mobile-menu.open{display:block}
 .mobile-menu a{display:block;padding:12px 16px;border-radius:12px;font-weight:500;color:#374151;cursor:pointer;margin-bottom:4px}
 .mobile-menu a:hover,.mobile-menu a.active{background:#f3f0ff;color:#7c3aed}
 .mobile-menu .mob-cta{background:#7c3aed;color:#fff;text-align:center;margin-top:8px;font-weight:700}
@@ -37,35 +100,22 @@ nav.scrolled{box-shadow:0 2px 20px rgba(0,0,0,.08)}
 .page.active{display:block}
 
 /* BUTTONS */
-.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;border-radius:99px;font-weight:700;font-size:15px;cursor:pointer;transition:.2s;border:none;font-family:inherit}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;border-radius:99px;font-weight:700;font-size:15px;cursor:pointer;transition:.2s;border:none;font-family:inherit;text-decoration:none}
+.btn:disabled{opacity:.6;cursor:not-allowed}
 .btn-primary{background:#7c3aed;color:#fff;box-shadow:0 4px 15px rgba(124,58,237,.3)}
-.btn-primary:hover{background:#6d28d9;transform:translateY(-2px);box-shadow:0 6px 20px rgba(124,58,237,.4)}
+.btn-primary:hover:not(:disabled){background:#6d28d9;transform:translateY(-2px);box-shadow:0 6px 20px rgba(124,58,237,.4)}
 .btn-outline{background:transparent;color:#7c3aed;border:2px solid #7c3aed}
-.btn-outline:hover{background:#7c3aed;color:#fff}
+.btn-outline:hover:not(:disabled){background:#7c3aed;color:#fff}
 .btn-white{background:#fff;color:#7c3aed;font-weight:700}
-.btn-white:hover{background:#f3f0ff}
+.btn-white:hover:not(:disabled){background:#f3f0ff}
 
 /* HERO */
 .hero{min-height:calc(100vh - 64px);background:linear-gradient(135deg,#faf5ff 0%,#fff 50%,#fffbeb 100%);display:flex;align-items:center;overflow:hidden}
 .hero-inner{max-width:1100px;margin:0 auto;padding:60px 20px;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;width:100%}
-.hero-badge{display:inline-flex;align-items:center;gap:6px;background:#f3f0ff;color:#7c3aed;padding:8px 16px;border-radius:99px;font-size:13px;font-weight:700;margin-bottom:24px}
-.hero-title{font-size:52px;font-weight:900;line-height:1.2;color:#111827;margin-bottom:20px;letter-spacing:-1px}
-.hero-title span{background:linear-gradient(135deg,#7c3aed,#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-.hero-desc{font-size:17px;color:#6b7280;line-height:1.8;margin-bottom:32px}
-.hero-btns{display:flex;gap:12px;flex-wrap:wrap}
 .hero-stats{display:flex;gap:24px;margin-top:36px;flex-wrap:wrap}
 .hero-stat{display:flex;align-items:center;gap:6px;font-size:14px;color:#6b7280}
 .hero-stat strong{color:#111827}
-.egg-visual{display:flex;justify-content:center;align-items:center;position:relative}
-.egg-shape{width:320px;height:380px;background:linear-gradient(135deg,#a78bfa,#7c3aed);border-radius:60% 40% 70% 30% / 50% 60% 40% 50%;display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:0 20px 60px rgba(124,58,237,.3);animation:float 4s ease-in-out infinite}
-.egg-emoji{font-size:80px;margin-bottom:12px}
-.egg-brand{font-size:22px;font-weight:900;color:#fff;letter-spacing:1px}
-.egg-sub{font-size:13px;color:#e9d5ff;margin-top:4px}
-.egg-badge{position:absolute;background:#fcd34d;color:#1f2937;font-size:12px;font-weight:700;padding:8px 14px;border-radius:99px;box-shadow:0 4px 12px rgba(0,0,0,.15);animation:bounce 2s ease-in-out infinite}
-.egg-badge.top{top:10px;right:10px}
-.egg-badge.bottom{bottom:20px;left:0;background:#fff;color:#7c3aed;border:2px solid #e9d5ff;animation-delay:.5s}
-@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
-@keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap}
 
 /* SECTIONS */
 .section{padding:90px 0}
@@ -110,7 +160,7 @@ nav.scrolled{box-shadow:0 2px 20px rgba(0,0,0,.08)}
 
 /* PROGRAM CARDS */
 .prog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.prog-card{background:#fff;border-radius:20px;padding:24px;box-shadow:0 2px 12px rgba(0,0,0,.06);transition:.25s;cursor:pointer;border:2px solid transparent}
+.prog-card{background:#fff;border-radius:20px;padding:24px;box-shadow:0 2px 12px rgba(0,0,0,.06);transition:.25s;cursor:pointer;border:2px solid transparent;text-align:left;width:100%;font-family:inherit}
 .prog-card:hover{transform:translateY(-4px);box-shadow:0 8px 30px rgba(0,0,0,.12);border-color:#e9d5ff}
 .prog-card-top{display:flex;align-items:flex-start;gap:14px}
 .prog-icon{font-size:28px}
@@ -128,13 +178,13 @@ nav.scrolled{box-shadow:0 2px 20px rgba(0,0,0,.08)}
 /* FAQ */
 .faq-list{display:flex;flex-direction:column;gap:12px;max-width:760px;margin:0 auto}
 .faq-item{background:#fff;border-radius:16px;box-shadow:0 2px 10px rgba(0,0,0,.05);overflow:hidden}
-.faq-q{display:flex;align-items:center;justify-content:space-between;padding:20px 24px;cursor:pointer;font-weight:700;color:#111827;gap:12px}
+.faq-q{display:flex;align-items:center;justify-content:space-between;padding:20px 24px;cursor:pointer;font-weight:700;color:#111827;gap:12px;width:100%;text-align:left;background:none;border:none;font-family:inherit;font-size:inherit}
 .faq-q:hover{background:#faf5ff}
 .faq-q-left{display:flex;align-items:center;gap:12px}
 .faq-q-badge{width:28px;height:28px;min-width:28px;background:#f3f0ff;color:#7c3aed;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:900}
 .faq-toggle{font-size:22px;color:#7c3aed;transition:.3s;flex-shrink:0}
-.faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease;padding:0 24px}
-.faq-a.open{max-height:200px;padding:0 24px 20px}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease;padding:0 24px}
+.faq-a.open{max-height:600px;padding:0 24px 20px}
 .faq-a p{font-size:14px;color:#6b7280;line-height:1.8;padding-left:40px}
 
 /* CTA SECTION */
@@ -146,15 +196,6 @@ nav.scrolled{box-shadow:0 2px 20px rgba(0,0,0,.08)}
 
 /* PROGRAMS PAGE */
 .prog-full-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
-.prog-full-card{border-radius:20px;padding:28px;border:2px solid}
-.prog-full-card .pc-top{display:flex;align-items:flex-start;gap:16px;margin-bottom:20px}
-.prog-full-card .pc-icon{width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:24px;flex-shrink:0}
-.prog-full-card .pc-title{font-size:18px;font-weight:900;color:#111827;margin-bottom:4px}
-.prog-full-card .pc-sub{font-size:13px;color:#9ca3af}
-.prog-curr{list-style:none;margin-bottom:16px}
-.prog-curr li{font-size:13px;color:#374151;padding:5px 0;padding-left:14px;position:relative;line-height:1.6}
-.prog-curr li::before{content:"•";position:absolute;left:0;color:#a78bfa}
-.prog-quote{border-left:4px solid;padding-left:12px;font-size:13px;color:#6b7280;font-style:italic;line-height:1.6}
 
 /* PHILOSOPHY PAGE */
 .philo-steps{display:flex;flex-direction:column;gap:60px;max-width:860px;margin:0 auto}
@@ -193,21 +234,23 @@ nav.scrolled{box-shadow:0 2px 20px rgba(0,0,0,.08)}
 .form-group{margin-bottom:20px}
 .form-group.full{grid-column:1/-1}
 .form-label{display:block;font-size:13px;font-weight:700;color:#374151;margin-bottom:6px}
-.form-label span{color:#ef4444}
+.form-label .req{color:#ef4444}
 .form-label small{color:#9ca3af;font-weight:400}
 .form-input{width:100%;border:2px solid #e5e7eb;border-radius:12px;padding:12px 16px;font-size:14px;font-family:inherit;transition:.2s;outline:none;color:#111827;background:#fff}
 .form-input:focus{border-color:#7c3aed;box-shadow:0 0 0 3px rgba(124,58,237,.08)}
 .form-input.error{border-color:#ef4444}
-.form-error{font-size:12px;color:#ef4444;margin-top:4px}
+.form-error{font-size:12px;color:#ef4444;margin-top:4px;min-height:16px}
 .form-check{display:flex;gap:10px;align-items:flex-start;cursor:pointer}
 .form-check input{margin-top:3px;accent-color:#7c3aed;cursor:pointer}
 .form-check span{font-size:13px;color:#6b7280;line-height:1.6}
 .form-check strong{color:#111827}
+.form-check button{background:none;border:none;color:#7c3aed;text-decoration:underline;cursor:pointer;font-size:inherit;padding:0}
 .success-box{text-align:center;padding:60px 20px}
 .success-icon{width:80px;height:80px;background:#dcfce7;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:36px;margin:0 auto 20px}
 .success-title{font-size:24px;font-weight:900;color:#111827;margin-bottom:8px}
 .success-sub{font-size:15px;color:#6b7280;margin-bottom:28px}
-.alert{display:flex;align-items:center;gap:10px;background:#fef2f2;border:1px solid #fecaca;border-radius:12px;padding:14px 16px;margin-bottom:20px;font-size:13px;color:#dc2626}
+.alert{display:flex;align-items:flex-start;gap:10px;background:#fef2f2;border:1px solid #fecaca;border-radius:12px;padding:14px 16px;margin-bottom:20px;font-size:13px;color:#dc2626;line-height:1.6}
+.alert.info{background:#eff6ff;border-color:#bfdbfe;color:#1d4ed8}
 
 /* ADMIN */
 .admin-login{max-width:420px;margin:60px auto;background:#fff;border-radius:24px;padding:40px;box-shadow:0 8px 40px rgba(0,0,0,.1)}
@@ -218,7 +261,7 @@ nav.scrolled{box-shadow:0 2px 20px rgba(0,0,0,.08)}
 .admin-tabs{display:flex;gap:4px;background:#f9fafb;padding:4px;border-radius:12px;margin-bottom:24px}
 .admin-tab{flex:1;padding:10px;text-align:center;font-size:13px;font-weight:600;border-radius:8px;cursor:pointer;transition:.2s;color:#6b7280;border:none;background:none;font-family:inherit}
 .admin-tab.active{background:#fff;color:#7c3aed;box-shadow:0 2px 8px rgba(0,0,0,.08)}
-.admin-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:24px}
+.admin-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:24px;flex-wrap:wrap;gap:12px}
 .admin-top h2{font-size:22px;font-weight:900;color:#111827}
 .stat-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:32px}
 .s-card{background:#fff;border-radius:16px;padding:20px;box-shadow:0 2px 10px rgba(0,0,0,.06)}
@@ -232,7 +275,7 @@ nav.scrolled{box-shadow:0 2px 20px rgba(0,0,0,.08)}
 .consult-info{font-size:13px;color:#6b7280;margin-bottom:6px}
 .consult-prog{font-size:13px;color:#7c3aed}
 .consult-msg{font-size:13px;color:#9ca3af;font-style:italic;margin-top:4px}
-.consult-actions{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap}
+.consult-actions{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap;align-items:center}
 .status-select{padding:6px 10px;border:2px solid #e5e7eb;border-radius:8px;font-size:12px;font-weight:600;cursor:pointer;color:#374151;font-family:inherit;background:#fff}
 .btn-small{padding:6px 12px;border-radius:8px;font-size:12px;font-weight:700;cursor:pointer;border:none;font-family:inherit;transition:.2s}
 .btn-del{background:#fef2f2;color:#dc2626}
@@ -253,18 +296,25 @@ nav.scrolled{box-shadow:0 2px 20px rgba(0,0,0,.08)}
 .pm-bar-wrap{background:#f3f4f6;border-radius:99px;height:8px;margin:4px 0}
 .pm-bar{background:#a78bfa;border-radius:99px;height:8px;transition:.5s}
 .pm-bar-txt{font-size:11px;color:#9ca3af;text-align:right}
-.pm-actions{display:flex;gap:8px;margin-top:12px}
+.pm-actions{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap}
 .add-prog-btn{display:flex;align-items:center;gap:6px;padding:10px 18px;background:#f3f0ff;color:#7c3aed;border:2px dashed #c4b5fd;border-radius:12px;cursor:pointer;font-size:13px;font-weight:700;transition:.2s;width:100%;justify-content:center;margin-bottom:16px;font-family:inherit}
 .add-prog-btn:hover{background:#ede9fe}
+.spinner{width:20px;height:20px;border:3px solid #e5e7eb;border-top-color:#7c3aed;border-radius:50%;animation:spin 1s linear infinite;display:inline-block}
+@keyframes spin{to{transform:rotate(360deg)}}
 
 /* MODAL */
 .modal-bg{display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:200;align-items:center;justify-content:center;padding:20px}
 .modal-bg.open{display:flex}
 .modal{background:#fff;border-radius:20px;padding:28px;width:100%;max-width:480px;max-height:90vh;overflow-y:auto}
+.modal.wide{max-width:640px}
 .modal-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px}
 .modal-title{font-size:18px;font-weight:900;color:#111827}
-.modal-close{background:none;border:none;font-size:22px;cursor:pointer;color:#9ca3af;line-height:1}
+.modal-close{background:none;border:none;font-size:22px;cursor:pointer;color:#9ca3af;line-height:1;padding:4px}
 .modal-close:hover{color:#374151}
+.policy-body{font-size:13px;color:#374151;line-height:1.8}
+.policy-body h4{font-weight:700;color:#111827;margin:16px 0 6px}
+.policy-body h4:first-child{margin-top:0}
+.policy-body ul{padding-left:20px;margin:6px 0}
 
 /* STATUS BADGES */
 .status-badge{display:inline-flex;align-items:center;padding:4px 10px;border-radius:99px;font-size:11px;font-weight:700}
@@ -276,24 +326,24 @@ nav.scrolled{box-shadow:0 2px 20px rgba(0,0,0,.08)}
 /* FOOTER */
 footer{background:#111827;color:#9ca3af;padding:60px 0 30px}
 .footer-inner{max-width:1100px;margin:0 auto;padding:0 20px}
-.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px;margin-bottom:40px}
-.footer-brand{display:flex;align-items:center;gap:8px;margin-bottom:14px;cursor:pointer}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:40px}
+.footer-brand{display:flex;align-items:center;gap:8px;margin-bottom:14px;cursor:pointer;background:none;border:none;padding:0}
 .footer-brand-icon{width:34px;height:34px;background:linear-gradient(135deg,#7c3aed,#a78bfa);border-radius:10px;display:flex;align-items:center;justify-content:center}
 .footer-brand-text{font-weight:900;font-size:18px;color:#fff}
 .footer-desc{font-size:13px;line-height:1.8}
+.footer-biz{font-size:12px;line-height:1.9;margin-top:14px;color:#6b7280}
 .footer-col-title{font-weight:700;color:#fff;margin-bottom:14px}
 .footer-links{display:flex;flex-direction:column;gap:8px}
-.footer-links a{font-size:13px;cursor:pointer;transition:.2s}
-.footer-links a:hover{color:#a78bfa}
+.footer-links a,.footer-links button{font-size:13px;cursor:pointer;transition:.2s;background:none;border:none;color:inherit;padding:0;text-align:left;font-family:inherit}
+.footer-links a:hover,.footer-links button:hover{color:#a78bfa}
 .footer-bottom{border-top:1px solid #1f2937;padding-top:20px;font-size:12px;text-align:center;color:#4b5563}
+.footer-bottom button{background:none;border:none;color:#4b5563;cursor:pointer;text-decoration:underline;font-family:inherit;font-size:inherit}
 
 /* RESPONSIVE */
 @media(max-width:900px){
   .hero-inner{grid-template-columns:1fr;text-align:center}
-  .egg-visual{display:none}
   .hero-stats{justify-content:center}
   .hero-btns{justify-content:center}
-  .hero-title{font-size:38px}
   .stat-grid{grid-template-columns:1fr}
   .prog-grid{grid-template-columns:repeat(2,1fr)}
   .prog-full-grid{grid-template-columns:1fr}
@@ -303,7 +353,7 @@ footer{background:#111827;color:#9ca3af;padding:60px 0 30px}
   .comp-grid{grid-template-columns:repeat(2,1fr)}
   .stat-cards{grid-template-columns:repeat(2,1fr)}
   .prog-manage-grid{grid-template-columns:1fr}
-  .footer-grid{grid-template-columns:1fr 1fr}
+  .footer-grid{grid-template-columns:1fr 1fr;gap:24px}
 }
 @media(max-width:640px){
   .nav-links{display:none}
@@ -322,69 +372,70 @@ footer{background:#111827;color:#9ca3af;padding:60px 0 30px}
 </head>
 <body>
 
+<a href="#main" class="sr-only">본문으로 바로가기</a>
+
 <!-- NAV -->
-<nav id="nav">
+<nav id="nav" aria-label="주 메뉴">
   <div class="nav-inner">
-    <div class="logo" onclick="showPage('home')">
-      <img src="mascot.png" alt="로고" style="width:38px;height:38px;object-fit:contain;border-radius:10px;background:#f3f0ff;padding:2px">
-      <span class="logo-text">퍼플에그</span>
-    </div>
+    <button class="logo" onclick="goPage('home')" aria-label="홈으로 이동">
+      <!-- 실제 운영 시 logo.png 파일을 영문 파일명으로 교체하세요 -->
+      <img src="logo.png" alt="퍼플에그 미래창의교육" style="height:44px;width:auto;display:block" onerror="this.style.display='none'">
+    </button>
     <div class="nav-links">
-      <a onclick="showPage('home')" id="nav-home" class="active">홈</a>
-      <a onclick="showPage('programs')" id="nav-programs">프로그램</a>
-      <a onclick="showPage('philosophy')" id="nav-philosophy">교육 철학</a>
-      <a onclick="showPage('consultation')" id="nav-consultation">상담 신청</a>
-      <a onclick="showPage('consultation')" class="nav-cta">무료 상담 신청</a>
+      <a href="#/home" id="nav-home" class="active">홈</a>
+      <a href="#/programs" id="nav-programs">프로그램</a>
+      <a href="#/philosophy" id="nav-philosophy">교육 철학</a>
+      <a href="#/consultation" id="nav-consultation">상담 신청</a>
+      <a href="#/consultation" class="nav-cta">무료 상담 신청</a>
     </div>
-    <div class="hamburger" onclick="toggleMobile()" id="hamburger">
+    <button class="hamburger" onclick="toggleMobile()" id="hamburger" aria-label="메뉴 열기" aria-expanded="false">
       <span></span><span></span><span></span>
-    </div>
+    </button>
   </div>
 </nav>
-<div class="mobile-menu" id="mobile-menu">
-  <a onclick="showPage('home');closeMobile()" id="mob-home" class="active">홈</a>
-  <a onclick="showPage('programs');closeMobile()" id="mob-programs">프로그램</a>
-  <a onclick="showPage('philosophy');closeMobile()" id="mob-philosophy">교육 철학</a>
-  <a onclick="showPage('consultation');closeMobile()" id="mob-consultation">상담 신청</a>
-  <a onclick="showPage('consultation');closeMobile()" class="mob-cta">무료 상담 신청 🥚</a>
+<div class="mobile-menu" id="mobile-menu" role="menu">
+  <a href="#/home" id="mob-home" class="active" role="menuitem">홈</a>
+  <a href="#/programs" id="mob-programs" role="menuitem">프로그램</a>
+  <a href="#/philosophy" id="mob-philosophy" role="menuitem">교육 철학</a>
+  <a href="#/consultation" id="mob-consultation" role="menuitem">상담 신청</a>
+  <a href="#/consultation" class="mob-cta" role="menuitem">무료 상담 신청 🥚</a>
 </div>
+
+<main id="main">
 
 <!-- ══════════ HOME PAGE ══════════ -->
 <div id="page-home" class="page active">
 
   <!-- HERO -->
-  <div class="hero">
-    <div class="hero-inner">
-      <div>
-        <div class="hero-badge">✨ 초등 3·4학년 미래 역량 강화 프로그램</div>
-        <h1 class="hero-title">스스로 내일을<br><span>만드는 아이들</span></h1>
-        <p class="hero-desc">역량 중심 교육으로의 패러다임 전환.<br>퍼플에그는 아이가 <strong>스스로 깨어나는</strong> 교육입니다.</p>
-        <div class="hero-btns">
-          <button class="btn btn-primary" onclick="showPage('consultation')">무료 상담 신청 →</button>
-          <button class="btn btn-outline" onclick="showPage('programs')">프로그램 보기</button>
-        </div>
-        <div class="hero-stats">
-          <div class="hero-stat">⭐ <strong>10개</strong> 연간 프로그램</div>
-          <div class="hero-stat">👥 <strong>6~8명</strong> 소규모 수업</div>
-          <div class="hero-stat">⏰ <strong>주 1회</strong> 2시간</div>
-        </div>
+  <section class="hero" style="min-height:auto;display:block;background:#fdfdfd;padding:0;overflow:hidden" aria-labelledby="hero-heading">
+    <h1 id="hero-heading" class="sr-only">퍼플에그 - 초등 미래 역량 강화 프로그램</h1>
+    <!-- 실제 운영 시: 한글 파일명 '홈피 대문.png' 대신 영문 파일명(예: hero-banner.png) 권장 -->
+    <div style="width:100%;background:linear-gradient(to bottom,#fdfdfd 0%,#fdfdfd 82%,#a48fcf 82%,#a48fcf 100%);padding:0;display:flex;justify-content:center;align-items:center">
+      <img src="홈피 대문.png"
+           srcset="홈피 대문.png 1x, 홈피 대문@2x.png 2x, 홈피 대문@3x.png 3x"
+           alt="퍼플에그 미래창의교육 - AI 시대 아이 스스로 깨어나는 교육"
+           style="width:100%;max-width:1200px;height:auto;display:block;image-rendering:-webkit-optimize-contrast"
+           loading="eager">
+    </div>
+    <div style="max-width:1100px;margin:0 auto;padding:40px 20px 60px;text-align:center">
+      <div class="hero-btns" style="justify-content:center;margin-bottom:24px">
+        <a href="#/consultation" class="btn btn-primary">무료 상담 신청 →</a>
+        <a href="#/programs" class="btn btn-outline">프로그램 보기</a>
       </div>
-      <div class="egg-visual">
-        <div style="position:relative;display:inline-block">
-          <img src="mascot.png" alt="퍼플에그 마스코트" style="width:340px;max-width:100%;animation:float 4s ease-in-out infinite;filter:drop-shadow(0 20px 40px rgba(124,58,237,.25))">
-          <div class="egg-badge top">AI 교육 ✨</div>
-          <div class="egg-badge bottom">프로젝트 기반 학습</div>
-        </div>
+      <div class="hero-stats" style="justify-content:center">
+        <div class="hero-stat">⭐ <strong>10개</strong> 프로그램</div>
+        <div class="hero-stat">👥 <strong>6~8명</strong> 소규모 수업</div>
+        <div class="hero-stat">⏰ <strong>주 1회</strong> 2시간</div>
       </div>
     </div>
-  </div>
+  </section>
 
   <!-- AI 시대 -->
-  <div class="section section-gray">
+  <section class="section section-gray" aria-labelledby="why-heading">
     <div class="container">
       <div class="section-head">
         <div class="section-label">왜 지금인가</div>
-        <h2 class="section-title">AI 시대, 교육이 달라져야 합니다</h2>
+        <h2 id="why-heading" class="section-title">AI 시대, 교육이 달라져야 합니다</h2>
         <p class="section-sub">미래를 살아갈 아이들에게 진짜 필요한 것은 무엇일까요?</p>
       </div>
       <div class="stat-grid" style="margin-bottom:40px">
@@ -401,150 +452,124 @@ footer{background:#111827;color:#9ca3af;padding:60px 0 30px}
           <p class="stat-desc">세계경제포럼 선정<br><strong>미래 핵심 역량: 비판적 사고력</strong></p>
         </div>
       </div>
-      <div class="compare-table">
-        <div class="compare-header">
-          <div class="c-before">기존 교육</div>
-          <div class="c-after">퍼플에그 교육</div>
+      <div class="compare-table" role="table" aria-label="기존 교육과 퍼플에그 교육 비교">
+        <div class="compare-header" role="row">
+          <div class="c-before" role="columnheader">기존 교육</div>
+          <div class="c-after" role="columnheader">퍼플에그 교육</div>
         </div>
-        <div class="compare-row"><div class="c-before">지식의 암기 및 정답 맞히기</div><div class="c-after">문제 정의 및 대안 생성 능력</div></div>
-        <div class="compare-row"><div class="c-before">강사 중심의 일방향 강의</div><div class="c-after">학생 주도의 프로젝트 기반 학습</div></div>
-        <div class="compare-row"><div class="c-before">전통적 교재 및 문제집</div><div class="c-after">AI 및 다양한 디지털 창작 도구</div></div>
-        <div class="compare-row"><div class="c-before">객관식 시험 및 점수/석차</div><div class="c-after">성장 포트폴리오 (사고의 궤적)</div></div>
+        <div class="compare-row" role="row"><div class="c-before" role="cell">지식의 암기 및 정답 맞히기</div><div class="c-after" role="cell">문제 정의 및 대안 생성 능력</div></div>
+        <div class="compare-row" role="row"><div class="c-before" role="cell">강사 중심의 일방향 강의</div><div class="c-after" role="cell">학생 주도의 프로젝트 기반 학습</div></div>
+        <div class="compare-row" role="row"><div class="c-before" role="cell">전통적 교재 및 문제집</div><div class="c-after" role="cell">AI 및 다양한 디지털 창작 도구</div></div>
+        <div class="compare-row" role="row"><div class="c-before" role="cell">객관식 시험 및 점수/석차</div><div class="c-after" role="cell">성장 포트폴리오 (사고의 궤적)</div></div>
       </div>
     </div>
-  </div>
+  </section>
 
   <!-- 배너 통계 -->
-  <div class="purple-banner">
+  <section class="purple-banner" aria-label="프로그램 요약 정보">
     <div class="container">
       <div class="banner-grid">
-        <div class="banner-item"><div class="banner-icon">🎓</div><div class="banner-val">10가지</div><div class="banner-lbl">핵심 역량 프로그램</div></div>
-        <div class="banner-item"><div class="banner-icon">👫</div><div class="banner-val">6~8명</div><div class="banner-lbl">소규모 밀착 수업</div></div>
-        <div class="banner-item"><div class="banner-icon">⏰</div><div class="banner-val">주 1회 2시간</div><div class="banner-lbl">부담 없는 일정</div></div>
-        <div class="banner-item"><div class="banner-icon">📋</div><div class="banner-val">12주</div><div class="banner-lbl">프로그램 완결형</div></div>
+        <div class="banner-item"><div class="banner-icon" aria-hidden="true">🎓</div><div class="banner-val">10가지</div><div class="banner-lbl">핵심 역량 프로그램</div></div>
+        <div class="banner-item"><div class="banner-icon" aria-hidden="true">👫</div><div class="banner-val">6~8명</div><div class="banner-lbl">소규모 밀착 수업</div></div>
+        <div class="banner-item"><div class="banner-icon" aria-hidden="true">⏰</div><div class="banner-val">주 1회 2시간</div><div class="banner-lbl">부담 없는 일정</div></div>
+        <div class="banner-item"><div class="banner-icon" aria-hidden="true">📋</div><div class="banner-val">12주</div><div class="banner-lbl">프로그램 완결형</div></div>
       </div>
     </div>
-  </div>
+  </section>
 
   <!-- 프로그램 미리보기 -->
-  <div class="section">
+  <section class="section" aria-labelledby="prog-preview-heading">
     <div class="container">
       <div class="section-head">
-        <div class="section-label">연간 프로그램</div>
-        <h2 class="section-title">연간 10대 프로그램</h2>
+        <div class="section-label">프로그램</div>
+        <h2 id="prog-preview-heading" class="section-title">10대 프로그램</h2>
         <p class="section-sub">각 12주 완결형 · 프로젝트 기반 학습</p>
       </div>
-      <div class="prog-grid">
-        <div class="prog-card"><div class="prog-card-top"><span class="prog-icon">🔍</span><div><div class="prog-num">01</div><div class="prog-name">상상 렌즈</div><span class="prog-badge" style="background:#f3f0ff;color:#7c3aed">관점전환·질문습관</span></div></div></div>
-        <div class="prog-card"><div class="prog-card-top"><span class="prog-icon">🏪</span><div><div class="prog-num">02</div><div class="prog-name">가치 공작소</div><span class="prog-badge" style="background:#fef9c3;color:#b45309">문제해결·창업가정신</span></div></div></div>
-        <div class="prog-card"><div class="prog-card-top"><span class="prog-icon">🤖</span><div><div class="prog-num">03</div><div class="prog-name">AI 파트너</div><span class="prog-badge" style="background:#dbeafe;color:#1d4ed8">기술공생·디지털문해력</span></div></div></div>
-        <div class="prog-card"><div class="prog-card-top"><span class="prog-icon">🌱</span><div><div class="prog-num">04</div><div class="prog-name">내일의 한 걸음</div><span class="prog-badge" style="background:#dcfce7;color:#15803d">공감·사회적기여</span></div></div></div>
-        <div class="prog-card"><div class="prog-card-top"><span class="prog-icon">📖</span><div><div class="prog-num">05</div><div class="prog-name">이야기 설계사</div><span class="prog-badge" style="background:#fce7f3;color:#be185d">스토리텔링·표현력</span></div></div></div>
-        <div class="prog-card"><div class="prog-card-top"><span class="prog-icon">📊</span><div><div class="prog-num">06</div><div class="prog-name">숫자 탐험대</div><span class="prog-badge" style="background:#ffedd5;color:#c2410c">데이터리터러시</span></div></div></div>
-      </div>
+      <div class="prog-grid" id="prog-preview-grid"></div>
       <div style="text-align:center;margin-top:28px">
-        <button class="btn btn-outline" onclick="showPage('programs')">전체 프로그램 보기 →</button>
+        <a href="#/programs" class="btn btn-outline">전체 프로그램 보기 →</a>
       </div>
     </div>
-  </div>
+  </section>
 
   <!-- 12주 변화 -->
-  <div class="section section-purple">
+  <section class="section section-purple" aria-labelledby="change-heading">
     <div class="container">
       <div class="section-head">
-        <h2 class="section-title">12주 후, 이런 변화를 경험합니다</h2>
+        <h2 id="change-heading" class="section-title">12주 후, 이런 변화를 경험합니다</h2>
       </div>
       <div class="change-list">
-        <div class="change-row"><div class="change-before">시키는 대로 하는 아이</div><div class="change-arrow">→</div><div class="change-after">왜?라고 질문하는 아이</div></div>
-        <div class="change-row"><div class="change-before">정답만 찾는 아이</div><div class="change-arrow">→</div><div class="change-after">다양한 관점을 탐색하는 아이</div></div>
-        <div class="change-row"><div class="change-before">혼자 공부하는 아이</div><div class="change-arrow">→</div><div class="change-after">함께 토론하고 협업하는 아이</div></div>
-        <div class="change-row"><div class="change-before">결과에 집착하는 아이</div><div class="change-arrow">→</div><div class="change-after">과정을 즐기는 아이</div></div>
+        <div class="change-row"><div class="change-before">시키는 대로 하는 아이</div><div class="change-arrow" aria-hidden="true">→</div><div class="change-after">왜?라고 질문하는 아이</div></div>
+        <div class="change-row"><div class="change-before">정답만 찾는 아이</div><div class="change-arrow" aria-hidden="true">→</div><div class="change-after">다양한 관점을 탐색하는 아이</div></div>
+        <div class="change-row"><div class="change-before">혼자 공부하는 아이</div><div class="change-arrow" aria-hidden="true">→</div><div class="change-after">함께 토론하고 협업하는 아이</div></div>
+        <div class="change-row"><div class="change-before">결과에 집착하는 아이</div><div class="change-arrow" aria-hidden="true">→</div><div class="change-after">과정을 즐기는 아이</div></div>
       </div>
     </div>
-  </div>
+  </section>
 
   <!-- FAQ -->
-  <div class="section">
+  <section class="section" aria-labelledby="faq-heading">
     <div class="container">
       <div class="section-head">
-        <h2 class="section-title">자주 묻는 질문</h2>
+        <h2 id="faq-heading" class="section-title">자주 묻는 질문</h2>
       </div>
-      <div class="faq-list">
-        <div class="faq-item">
-          <div class="faq-q" onclick="toggleFaq(this)"><div class="faq-q-left"><span class="faq-q-badge">Q</span>선행학습과 다른 점은 무엇인가요?</div><span class="faq-toggle">+</span></div>
-          <div class="faq-a"><p>지식 전달이 아닌 사고력 훈련에 집중합니다. 교과 성적도 자연스럽게 향상됩니다.</p></div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-q" onclick="toggleFaq(this)"><div class="faq-q-left"><span class="faq-q-badge">Q</span>소극적인 아이도 참여할 수 있나요?</div><span class="faq-toggle">+</span></div>
-          <div class="faq-a"><p>6~8명 소규모 운영으로 모든 아이가 발언 기회를 보장받습니다.</p></div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-q" onclick="toggleFaq(this)"><div class="faq-q-left"><span class="faq-q-badge">Q</span>숙제가 있나요?</div><span class="faq-toggle">+</span></div>
-          <div class="faq-a"><p>별도 숙제 없이 수업 시간 내 완결형으로 진행됩니다.</p></div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-q" onclick="toggleFaq(this)"><div class="faq-q-left"><span class="faq-q-badge">Q</span>다른 학원과 병행 가능한가요?</div><span class="faq-toggle">+</span></div>
-          <div class="faq-a"><p>주 1회 2시간 수업으로 부담 없이 병행 가능합니다.</p></div>
-        </div>
-      </div>
+      <div class="faq-list" id="faq-list"></div>
     </div>
-  </div>
+  </section>
 
   <!-- CTA -->
-  <div class="cta-section">
+  <section class="cta-section" style="padding:72px 0" aria-label="상담 신청 안내">
     <div class="container">
-      <img src="mascot.png" alt="퍼플에그 마스코트" style="width:140px;margin-bottom:8px;filter:drop-shadow(0 8px 20px rgba(0,0,0,.2))">
-      <h2 class="cta-title">아이들의 내일을 향한 여정에<br>함께해 주세요</h2>
-      <p class="cta-sub">"미래를 예측하는 가장 좋은 방법은 직접 만드는 것입니다." — 피터 드러커</p>
-      <button class="btn btn-white" onclick="showPage('consultation')">지금 무료 상담 신청하기 →</button>
+      <h2 class="cta-title" style="font-size:34px;margin-bottom:14px">아이들의 내일을 향한 여정에<br>함께해 주세요</h2>
+      <p class="cta-sub" style="margin-bottom:28px">"미래를 예측하는 가장 좋은 방법은 직접 만드는 것입니다." — 피터 드러커</p>
+      <a href="#/consultation" class="btn btn-white">지금 무료 상담 신청하기 →</a>
       <p class="cta-note">별도 비용 없이 자세한 안내를 받아보세요</p>
     </div>
-  </div>
+  </section>
 
 </div>
 
 <!-- ══════════ PROGRAMS PAGE ══════════ -->
 <div id="page-programs" class="page">
-  <div style="background:linear-gradient(135deg,#faf5ff,#fff);padding:80px 0 40px">
+  <section style="background:linear-gradient(135deg,#faf5ff,#fff);padding:80px 0 40px" aria-labelledby="programs-heading">
     <div class="container" style="text-align:center">
-      <div class="section-label">연간 프로그램</div>
-      <h1 class="section-title" style="font-size:42px;margin-top:10px">10대 핵심 프로그램</h1>
-      <p style="color:#9ca3af;font-size:16px;margin-top:12px">각 프로그램은 12주 완결형 · 초등 3·4학년 대상 · 프로젝트 기반 학습</p>
+      <div class="section-label">프로그램</div>
+      <h1 id="programs-heading" class="section-title" style="font-size:42px;margin-top:10px">10대 핵심 프로그램</h1>
+      <p style="color:#9ca3af;font-size:16px;margin-top:12px">각 프로그램은 12주 완결형 · 프로젝트 기반 학습</p>
     </div>
-  </div>
-  <div class="section">
+  </section>
+  <section class="section">
     <div class="container">
       <div class="prog-full-grid" id="prog-full-grid"></div>
     </div>
-  </div>
-  <div class="cta-section">
+  </section>
+  <section class="cta-section" aria-label="상담 신청 안내">
     <div class="container">
       <h2 class="cta-title">관심 있는 프로그램이 있으신가요?</h2>
       <p class="cta-sub">지금 무료 상담을 신청하시면 자세한 안내를 드립니다.</p>
-      <button class="btn btn-white" onclick="showPage('consultation')">무료 상담 신청 →</button>
+      <a href="#/consultation" class="btn btn-white">무료 상담 신청 →</a>
     </div>
-  </div>
+  </section>
 </div>
 
 <!-- ══════════ PHILOSOPHY PAGE ══════════ -->
 <div id="page-philosophy" class="page">
-  <div style="background:linear-gradient(135deg,#6d28d9,#7c3aed);padding:80px 0;text-align:center;color:#fff">
+  <section style="background:linear-gradient(135deg,#6d28d9,#7c3aed);padding:80px 0;text-align:center;color:#fff" aria-labelledby="philo-heading">
     <div class="container">
-      <img src="mascot.png" alt="퍼플에그 마스코트" style="width:140px;margin-bottom:8px;filter:drop-shadow(0 8px 20px rgba(0,0,0,.2))">
-      <h1 style="font-size:40px;font-weight:900;margin-bottom:16px">퍼플에그의 교육 철학</h1>
+      <img src="mascot.png" alt="퍼플에그 마스코트" style="width:140px;margin-bottom:8px;filter:drop-shadow(0 8px 20px rgba(0,0,0,.2))" onerror="this.style.display='none'">
+      <h1 id="philo-heading" style="font-size:40px;font-weight:900;margin-bottom:16px">퍼플에그의 교육 철학</h1>
       <p style="font-size:18px;color:#ddd6fe;line-height:1.8">"알은 밖에서 깨면 음식이 되고,<br>안에서 깨면 생명이 됩니다.<br>퍼플에그는 아이 스스로 깨어나는 교육입니다."</p>
     </div>
-  </div>
+  </section>
 
-  <!-- 3단계 -->
-  <div class="section">
+  <section class="section" aria-labelledby="philo-steps-heading">
     <div class="container">
       <div class="section-head">
-        <h2 class="section-title">브랜드 3단계 철학</h2>
+        <h2 id="philo-steps-heading" class="section-title">브랜드 3단계 철학</h2>
       </div>
       <div class="philo-steps">
         <div class="philo-step">
-          <div class="philo-egg" style="background:linear-gradient(135deg,#fcd34d,#fb923c)"><span>🥚</span><small style="color:#fff;font-size:11px;font-weight:700;margin-top:4px">EGG</small></div>
+          <div class="philo-egg" style="background:linear-gradient(135deg,#fcd34d,#fb923c)" aria-hidden="true"><span>🥚</span><small style="color:#fff;font-size:11px;font-weight:700;margin-top:4px">EGG</small></div>
           <div>
             <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px">
               <div class="philo-step-num">1</div>
@@ -556,7 +581,7 @@ footer{background:#111827;color:#9ca3af;padding:60px 0 30px}
           </div>
         </div>
         <div class="philo-step">
-          <div class="philo-egg" style="background:linear-gradient(135deg,#a78bfa,#7c3aed)"><span>✨</span><small style="color:#fff;font-size:11px;font-weight:700;margin-top:4px">CRACK</small></div>
+          <div class="philo-egg" style="background:linear-gradient(135deg,#a78bfa,#7c3aed)" aria-hidden="true"><span>✨</span><small style="color:#fff;font-size:11px;font-weight:700;margin-top:4px">CRACK</small></div>
           <div>
             <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px">
               <div class="philo-step-num">2</div>
@@ -568,7 +593,7 @@ footer{background:#111827;color:#9ca3af;padding:60px 0 30px}
           </div>
         </div>
         <div class="philo-step">
-          <div class="philo-egg" style="background:linear-gradient(135deg,#7c3aed,#4338ca)"><span>🦋</span><small style="color:#fff;font-size:11px;font-weight:700;margin-top:4px">PURPLE</small></div>
+          <div class="philo-egg" style="background:linear-gradient(135deg,#7c3aed,#4338ca)" aria-hidden="true"><span>🦋</span><small style="color:#fff;font-size:11px;font-weight:700;margin-top:4px">PURPLE</small></div>
           <div>
             <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px">
               <div class="philo-step-num">3</div>
@@ -581,32 +606,30 @@ footer{background:#111827;color:#9ca3af;padding:60px 0 30px}
         </div>
       </div>
     </div>
-  </div>
+  </section>
 
-  <!-- 6가지 역량 -->
-  <div class="section section-purple">
+  <section class="section section-purple" aria-labelledby="comp-heading">
     <div class="container">
       <div class="section-head">
-        <h2 class="section-title">우리 아이들이 얻게 될 변화</h2>
+        <h2 id="comp-heading" class="section-title">우리 아이들이 얻게 될 변화</h2>
         <p class="section-sub">퍼플에그가 키워가는 6가지 핵심 역량</p>
       </div>
       <div class="comp-grid">
-        <div class="comp-card"><div class="comp-top"><div class="comp-icon">🤝</div><div><div class="comp-code">CO</div><div class="comp-name">소통과 협업</div></div></div><p class="comp-desc">동료와 함께 문제를 풀며 리더십과 공감 능력 배양</p></div>
-        <div class="comp-card"><div class="comp-top"><div class="comp-icon">💪</div><div><div class="comp-code">RE</div><div class="comp-name">회복 탄력성</div></div></div><p class="comp-desc">실패를 당연한 과정으로 받아들이는 단단한 마음</p></div>
-        <div class="comp-card"><div class="comp-top"><div class="comp-icon">🎯</div><div><div class="comp-code">SL</div><div class="comp-name">자기 주도력</div></div></div><p class="comp-desc">자신이 배울 것을 직접 정하고 실행하는 독립적인 태도</p></div>
-        <div class="comp-card"><div class="comp-top"><div class="comp-icon">🧠</div><div><div class="comp-code">CT</div><div class="comp-name">비판적 사고</div></div></div><p class="comp-desc">정보를 분석하고 판단하는 논리적 사고 능력 향상</p></div>
-        <div class="comp-card"><div class="comp-top"><div class="comp-icon">🌍</div><div><div class="comp-code">SE</div><div class="comp-name">사회적 감수성</div></div></div><p class="comp-desc">공동체의 문제에 공감하고 실천으로 옮기는 시민의식</p></div>
-        <div class="comp-card"><div class="comp-top"><div class="comp-icon">🎨</div><div><div class="comp-code">CR</div><div class="comp-name">창의적 표현력</div></div></div><p class="comp-desc">다양한 도구와 매체를 활용해 자신만의 방식으로 표현</p></div>
+        <div class="comp-card"><div class="comp-top"><div class="comp-icon" aria-hidden="true">🤝</div><div><div class="comp-code">CO</div><div class="comp-name">소통과 협업</div></div></div><p class="comp-desc">동료와 함께 문제를 풀며 리더십과 공감 능력 배양</p></div>
+        <div class="comp-card"><div class="comp-top"><div class="comp-icon" aria-hidden="true">💪</div><div><div class="comp-code">RE</div><div class="comp-name">회복 탄력성</div></div></div><p class="comp-desc">실패를 당연한 과정으로 받아들이는 단단한 마음</p></div>
+        <div class="comp-card"><div class="comp-top"><div class="comp-icon" aria-hidden="true">🎯</div><div><div class="comp-code">SL</div><div class="comp-name">자기 주도력</div></div></div><p class="comp-desc">자신이 배울 것을 직접 정하고 실행하는 독립적인 태도</p></div>
+        <div class="comp-card"><div class="comp-top"><div class="comp-icon" aria-hidden="true">🧠</div><div><div class="comp-code">CT</div><div class="comp-name">비판적 사고</div></div></div><p class="comp-desc">정보를 분석하고 판단하는 논리적 사고 능력 향상</p></div>
+        <div class="comp-card"><div class="comp-top"><div class="comp-icon" aria-hidden="true">🌍</div><div><div class="comp-code">SE</div><div class="comp-name">사회적 감수성</div></div></div><p class="comp-desc">공동체의 문제에 공감하고 실천으로 옮기는 시민의식</p></div>
+        <div class="comp-card"><div class="comp-top"><div class="comp-icon" aria-hidden="true">🎨</div><div><div class="comp-code">CR</div><div class="comp-name">창의적 표현력</div></div></div><p class="comp-desc">다양한 도구와 매체를 활용해 자신만의 방식으로 표현</p></div>
       </div>
     </div>
-  </div>
+  </section>
 
-  <!-- 강사 소개 -->
-  <div class="section">
+  <section class="section" aria-labelledby="inst-heading">
     <div class="container">
-      <div class="section-head"><h2 class="section-title">강사 소개</h2></div>
+      <div class="section-head"><h2 id="inst-heading" class="section-title">강사 소개</h2></div>
       <div class="instructor-card">
-        <div class="inst-avatar">👩‍🏫</div>
+        <div class="inst-avatar" aria-hidden="true">👩‍🏫</div>
         <div class="inst-name">정혜숙</div>
         <div class="inst-title">퍼플에그 대표 강사</div>
         <div class="inst-list">
@@ -628,21 +651,21 @@ footer{background:#111827;color:#9ca3af;padding:60px 0 30px}
         </div>
       </div>
     </div>
-  </div>
+  </section>
 
-  <div class="cta-section">
+  <section class="cta-section" aria-label="상담 신청 안내">
     <div class="container" style="text-align:center">
       <h2 class="cta-title">퍼플에그와 함께 시작해보세요</h2>
-      <button class="btn btn-white" onclick="showPage('consultation')" style="margin-top:16px">무료 상담 신청 →</button>
+      <a href="#/consultation" class="btn btn-white" style="margin-top:16px">무료 상담 신청 →</a>
     </div>
-  </div>
+  </section>
 </div>
 
 <!-- ══════════ CONSULTATION PAGE ══════════ -->
 <div id="page-consultation" class="page">
-  <div style="background:linear-gradient(135deg,#faf5ff,#fff);padding:80px 0 40px">
+  <section style="background:linear-gradient(135deg,#faf5ff,#fff);padding:80px 0 40px" aria-labelledby="consult-heading">
     <div class="container" style="text-align:center">
-      <h1 class="section-title" style="font-size:42px">무료 상담 신청</h1>
+      <h1 id="consult-heading" class="section-title" style="font-size:42px">무료 상담 신청</h1>
       <p style="color:#9ca3af;font-size:16px;margin-top:12px">아이의 이름과 연락처를 남겨주시면 빠른 시일 내에 연락드리겠습니다.</p>
       <div style="display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:20px">
         <span style="background:#fff;padding:8px 16px;border-radius:99px;font-size:13px;box-shadow:0 2px 8px rgba(0,0,0,.08)">📞 연락 후 개별 상담 진행</span>
@@ -650,70 +673,12 @@ footer{background:#111827;color:#9ca3af;padding:60px 0 30px}
         <span style="background:#fff;padding:8px 16px;border-radius:99px;font-size:13px;box-shadow:0 2px 8px rgba(0,0,0,.08)">⏰ 빠른 연락</span>
       </div>
     </div>
-  </div>
-  <div class="section">
+  </section>
+  <section class="section">
     <div class="container">
-      <div class="form-wrap" id="form-wrap">
-        <div id="form-alert" class="alert" style="display:none">⚠️ <span id="form-alert-msg"></span></div>
-        <form id="consult-form" onsubmit="submitForm(event)">
-          <div class="form-grid">
-            <div class="form-group">
-              <label class="form-label">학부모 이름 <span>*</span></label>
-              <input class="form-input" id="f-parent" placeholder="홍길동" required>
-              <div class="form-error" id="err-parent"></div>
-            </div>
-            <div class="form-group">
-              <label class="form-label">자녀 이름 <span>*</span></label>
-              <input class="form-input" id="f-child" placeholder="홍소율" required>
-              <div class="form-error" id="err-child"></div>
-            </div>
-            <div class="form-group">
-              <label class="form-label">자녀 학년 <span>*</span></label>
-              <select class="form-input" id="f-grade" required>
-                <option value="">선택해주세요</option>
-                <option>초등 3학년</option><option>초등 4학년</option>
-                <option>초등 3학년 예정</option><option>초등 4학년 예정</option><option>기타</option>
-              </select>
-              <div class="form-error" id="err-grade"></div>
-            </div>
-            <div class="form-group">
-              <label class="form-label">연락처 <span>*</span></label>
-              <input class="form-input" id="f-phone" placeholder="010-1234-5678" required>
-              <div class="form-error" id="err-phone"></div>
-            </div>
-            <div class="form-group">
-              <label class="form-label">이메일 <small>(선택)</small></label>
-              <input class="form-input" id="f-email" type="email" placeholder="example@email.com">
-            </div>
-            <div class="form-group">
-              <label class="form-label">관심 프로그램 <small>(선택)</small></label>
-              <select class="form-input" id="f-program">
-                <option value="">선택해주세요</option>
-                <option>01. 상상 렌즈</option><option>02. 가치 공작소</option><option>03. AI 파트너</option>
-                <option>04. 내일의 한 걸음</option><option>05. 이야기 설계사</option><option>06. 숫자 탐험대</option>
-                <option>07. 지구 수호대</option><option>08. 감정 나침반</option><option>09. 문화 여행자</option>
-                <option>10. 놀이 발명가</option><option>아직 결정 못 했어요</option>
-              </select>
-            </div>
-            <div class="form-group full">
-              <label class="form-label">문의 내용 <small>(선택)</small></label>
-              <textarea class="form-input" id="f-message" rows="4" placeholder="궁금하신 점이나 전달하고 싶은 내용을 자유롭게 작성해주세요." style="resize:none"></textarea>
-            </div>
-            <div class="form-group full">
-              <div style="background:#f9fafb;border-radius:12px;padding:16px">
-                <label class="form-check">
-                  <input type="checkbox" id="f-agree" required>
-                  <span><strong>개인정보 수집 및 이용에 동의합니다.</strong><br>수집 항목: 이름, 연락처, 이메일 / 목적: 상담 안내 / 보유기간: 상담 완료 후 1년</span>
-                </label>
-                <div class="form-error" id="err-agree"></div>
-              </div>
-            </div>
-          </div>
-          <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;font-size:16px;padding:16px" id="submit-btn">상담 신청하기 🥚</button>
-        </form>
-      </div>
+      <div class="form-wrap" id="form-wrap"></div>
     </div>
-  </div>
+  </section>
 </div>
 
 <!-- ══════════ ADMIN PAGE ══════════ -->
@@ -721,30 +686,32 @@ footer{background:#111827;color:#9ca3af;padding:60px 0 30px}
   <div id="admin-login-wrap" style="padding:40px 20px">
     <div class="admin-login">
       <div class="admin-login-head">
-        <img src="mascot.png" alt="퍼플에그" style="width:80px;object-fit:contain;margin-bottom:4px">
-        <div class="admin-login-title">관리자 로그인</div>
-        <div class="admin-login-sub">퍼플에그 관리자 전용 페이지</div>
+        <img src="logo.png" alt="퍼플에그 미래창의교육" style="height:56px;width:auto;object-fit:contain;margin-bottom:12px;display:block;margin-left:auto;margin-right:auto" onerror="this.style.display='none'">
+        <h2 class="admin-login-title">관리자 로그인</h2>
+        <p class="admin-login-sub">퍼플에그 관리자 전용 페이지</p>
       </div>
-      <div class="form-group">
-        <label class="form-label">아이디</label>
-        <input class="form-input" id="admin-user" placeholder="admin">
-      </div>
-      <div class="form-group">
-        <label class="form-label">비밀번호</label>
-        <input class="form-input" id="admin-pass" type="password" placeholder="비밀번호" onkeydown="if(event.key==='Enter')adminLogin()">
-      </div>
-      <div id="admin-login-err" style="color:#ef4444;font-size:13px;text-align:center;margin-bottom:12px;display:none"></div>
-      <button class="btn btn-primary" style="width:100%;justify-content:center" onclick="adminLogin()">🔑 로그인</button>
-      <p style="font-size:12px;color:#9ca3af;text-align:center;margin-top:12px">기본: admin / purpleegg2024!</p>
+      <form onsubmit="event.preventDefault();adminLogin()">
+        <div class="form-group">
+          <label class="form-label" for="admin-user">아이디</label>
+          <input class="form-input" id="admin-user" placeholder="관리자 아이디" autocomplete="username">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="admin-pass">비밀번호</label>
+          <input class="form-input" id="admin-pass" type="password" placeholder="비밀번호" autocomplete="current-password">
+        </div>
+        <div id="admin-login-err" style="color:#ef4444;font-size:13px;text-align:center;margin-bottom:12px;display:none" role="alert"></div>
+        <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center" id="admin-login-btn">🔑 로그인</button>
+      </form>
+      <p style="font-size:12px;color:#9ca3af;text-align:center;margin-top:16px">관리자 계정은 Google Apps Script의 스크립트 속성에서 관리됩니다.</p>
     </div>
   </div>
 
   <div id="admin-panel" style="display:none">
     <div style="background:#fff;border-bottom:1px solid #e5e7eb;position:sticky;top:64px;z-index:50">
-      <div class="container" style="display:flex;align-items:center;justify-content:space-between;height:56px">
+      <div class="container" style="display:flex;align-items:center;justify-content:space-between;height:56px;flex-wrap:wrap;gap:8px">
         <div style="display:flex;gap:4px">
           <button class="admin-tab active" onclick="adminTab('dashboard',this)">📊 대시보드</button>
-          <button class="admin-tab" onclick="adminTab('consultations',this)" id="consult-tab-btn">📋 상담 신청</button>
+          <button class="admin-tab" onclick="adminTab('consultations',this)">📋 상담 신청</button>
           <button class="admin-tab" onclick="adminTab('schedule',this)">📅 프로그램 일정</button>
         </div>
         <button onclick="adminLogout()" style="background:none;border:none;font-size:13px;color:#9ca3af;cursor:pointer;font-family:inherit">로그아웃 →</button>
@@ -753,9 +720,8 @@ footer{background:#111827;color:#9ca3af;padding:60px 0 30px}
 
     <div class="container" style="padding-top:32px;padding-bottom:60px">
 
-      <!-- 대시보드 -->
       <div id="admin-dashboard">
-        <div class="admin-top"><h2>대시보드</h2></div>
+        <div class="admin-top"><h2>대시보드</h2><button class="btn-small btn-save" onclick="refreshAdmin()">🔄 새로고침</button></div>
         <div class="stat-cards" id="stat-cards"></div>
         <div style="background:#fff;border-radius:16px;padding:24px;box-shadow:0 2px 10px rgba(0,0,0,.06)">
           <h3 style="font-weight:700;margin-bottom:16px;color:#111827">최근 상담 신청</h3>
@@ -763,24 +729,26 @@ footer{background:#111827;color:#9ca3af;padding:60px 0 30px}
         </div>
       </div>
 
-      <!-- 상담 목록 -->
       <div id="admin-consultations" style="display:none">
         <div class="admin-top">
           <h2>상담 신청 목록</h2>
-          <select class="form-input" style="width:auto;font-size:13px" onchange="filterConsults(this.value)">
-            <option value="">전체 보기</option>
-            <option value="pending">대기중</option>
-            <option value="contacted">연락완료</option>
-            <option value="enrolled">등록완료</option>
-            <option value="cancelled">취소</option>
-          </select>
+          <div style="display:flex;gap:8px;align-items:center">
+            <label class="sr-only" for="consult-filter">상태별 필터</label>
+            <select class="form-input" id="consult-filter" style="width:auto;font-size:13px" onchange="filterConsults(this.value)">
+              <option value="">전체 보기</option>
+              <option value="pending">대기중</option>
+              <option value="contacted">연락완료</option>
+              <option value="enrolled">등록완료</option>
+              <option value="cancelled">취소</option>
+            </select>
+            <button class="btn-small btn-save" onclick="refreshAdmin()">🔄</button>
+          </div>
         </div>
         <div class="consult-list" id="consult-list-full"></div>
       </div>
 
-      <!-- 프로그램 일정 -->
       <div id="admin-schedule" style="display:none">
-        <div class="admin-top"><h2>프로그램 일정 관리</h2></div>
+        <div class="admin-top"><h2>프로그램 일정 관리</h2><button class="btn-small btn-save" onclick="refreshAdmin()">🔄 새로고침</button></div>
         <button class="add-prog-btn" onclick="openProgModal()">+ 새 프로그램 일정 추가</button>
         <div class="prog-manage-grid" id="prog-manage-grid"></div>
       </div>
@@ -789,17 +757,19 @@ footer{background:#111827;color:#9ca3af;padding:60px 0 30px}
   </div>
 </div>
 
+</main>
+
 <!-- 프로그램 추가 모달 -->
-<div class="modal-bg" id="prog-modal">
+<div class="modal-bg" id="prog-modal" role="dialog" aria-modal="true" aria-labelledby="prog-modal-title">
   <div class="modal">
     <div class="modal-head">
-      <div class="modal-title" id="prog-modal-title">프로그램 추가</div>
-      <button class="modal-close" onclick="closeProgModal()">×</button>
+      <h3 class="modal-title" id="prog-modal-title">프로그램 추가</h3>
+      <button class="modal-close" onclick="closeProgModal()" aria-label="닫기">×</button>
     </div>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px" id="prog-form-inner">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
       <div>
-        <label class="form-label">프로그램</label>
-        <select class="form-input" id="pf-num" onchange="autoFillProgName(this)" style="font-size:13px">
+        <label class="form-label" for="pf-num">프로그램</label>
+        <select class="form-input" id="pf-num" style="font-size:13px">
           <option value="1">01. 상상 렌즈</option><option value="2">02. 가치 공작소</option>
           <option value="3">03. AI 파트너</option><option value="4">04. 내일의 한 걸음</option>
           <option value="5">05. 이야기 설계사</option><option value="6">06. 숫자 탐험대</option>
@@ -808,33 +778,84 @@ footer{background:#111827;color:#9ca3af;padding:60px 0 30px}
         </select>
       </div>
       <div>
-        <label class="form-label">요일</label>
+        <label class="form-label" for="pf-day">요일</label>
         <input class="form-input" id="pf-day" placeholder="예: 매주 화요일" style="font-size:13px">
       </div>
       <div>
-        <label class="form-label">시간</label>
+        <label class="form-label" for="pf-time">시간</label>
         <input class="form-input" id="pf-time" placeholder="예: 16:00~18:00" style="font-size:13px">
       </div>
       <div>
-        <label class="form-label">정원</label>
+        <label class="form-label" for="pf-cap">정원</label>
         <input class="form-input" id="pf-cap" type="number" value="8" min="1" max="20" style="font-size:13px">
       </div>
       <div>
-        <label class="form-label">개강일</label>
+        <label class="form-label" for="pf-start">개강일</label>
         <input class="form-input" id="pf-start" type="date" style="font-size:13px">
       </div>
       <div>
-        <label class="form-label">종강일</label>
+        <label class="form-label" for="pf-end">종강일</label>
         <input class="form-input" id="pf-end" type="date" style="font-size:13px">
       </div>
       <div style="grid-column:1/-1">
-        <label class="form-label">모집 상태</label>
+        <label class="form-label" for="pf-active">모집 상태</label>
         <select class="form-input" id="pf-active" style="font-size:13px">
           <option value="true">모집중</option><option value="false">마감</option>
         </select>
       </div>
     </div>
-    <button class="btn btn-primary" style="width:100%;justify-content:center;margin-top:16px" onclick="saveProgram()">저장</button>
+    <button class="btn btn-primary" style="width:100%;justify-content:center;margin-top:16px" onclick="saveProgram()" id="prog-save-btn">저장</button>
+  </div>
+</div>
+
+<!-- 개인정보 처리방침 모달 -->
+<div class="modal-bg" id="privacy-modal" role="dialog" aria-modal="true" aria-labelledby="privacy-title">
+  <div class="modal wide">
+    <div class="modal-head">
+      <h3 class="modal-title" id="privacy-title">개인정보 수집·이용 동의</h3>
+      <button class="modal-close" onclick="closeModal('privacy-modal')" aria-label="닫기">×</button>
+    </div>
+    <div class="policy-body">
+      <h4>1. 수집 목적</h4>
+      <p>상담 신청에 대한 응대 및 프로그램 안내를 위해 개인정보를 수집합니다.</p>
+      <h4>2. 수집 항목</h4>
+      <ul>
+        <li>필수: 학부모 이름, 자녀 이름, 자녀 학년, 연락처</li>
+        <li>선택: 이메일, 관심 프로그램, 문의 내용</li>
+      </ul>
+      <h4>3. 보유 및 이용 기간</h4>
+      <p>상담 완료 후 1년 동안 보관 후 파기합니다. 단, 관련 법령에 따라 보존이 필요한 경우 해당 기간 동안 보관합니다.</p>
+      <h4>4. 동의 거부 권리 및 불이익</h4>
+      <p>개인정보 수집·이용에 동의하지 않을 권리가 있으며, 동의하지 않을 경우 상담 신청이 제한될 수 있습니다.</p>
+      <h4>5. 제3자 제공</h4>
+      <p>원칙적으로 제3자에게 제공하지 않으며, 법령에 의한 경우에만 예외적으로 제공합니다.</p>
+      <h4>6. 개인정보 보호책임자</h4>
+      <p>성명: [책임자명] · 연락처: [담당자 연락처] · 이메일: [담당자 이메일]</p>
+    </div>
+    <button class="btn btn-primary" style="width:100%;justify-content:center;margin-top:16px" onclick="closeModal('privacy-modal')">확인</button>
+  </div>
+</div>
+
+<!-- 이용약관 모달 -->
+<div class="modal-bg" id="terms-modal" role="dialog" aria-modal="true" aria-labelledby="terms-title">
+  <div class="modal wide">
+    <div class="modal-head">
+      <h3 class="modal-title" id="terms-title">이용약관</h3>
+      <button class="modal-close" onclick="closeModal('terms-modal')" aria-label="닫기">×</button>
+    </div>
+    <div class="policy-body">
+      <h4>제1조 (목적)</h4>
+      <p>본 약관은 퍼플에그 미래창의교육(이하 "학원")이 운영하는 웹사이트 및 교육 서비스의 이용과 관련하여 학원과 이용자 간의 권리, 의무 및 책임사항을 규정함을 목적으로 합니다.</p>
+      <h4>제2조 (서비스 내용)</h4>
+      <p>학원은 초등 3~4학년을 대상으로 한 미래 역량 강화 프로그램을 제공합니다. 프로그램의 세부 내용, 일정, 수강료는 별도로 안내합니다.</p>
+      <h4>제3조 (환불 규정)</h4>
+      <p>수강료 환불은 학원법 및 관련 법령에 따릅니다. 자세한 사항은 개별 상담 시 안내드립니다.</p>
+      <h4>제4조 (수업 운영)</h4>
+      <p>수업은 주 1회 2시간, 6~8명 소규모로 진행됩니다. 수업 일정 및 휴강은 사전에 공지합니다.</p>
+      <h4>제5조 (분쟁 해결)</h4>
+      <p>본 약관과 관련하여 발생한 분쟁은 관련 법령 및 상관례에 따라 해결합니다.</p>
+    </div>
+    <button class="btn btn-primary" style="width:100%;justify-content:center;margin-top:16px" onclick="closeModal('terms-modal')">확인</button>
   </div>
 </div>
 
@@ -843,383 +864,724 @@ footer{background:#111827;color:#9ca3af;padding:60px 0 30px}
   <div class="footer-inner">
     <div class="footer-grid">
       <div>
-        <div class="footer-brand" onclick="showPage('home')">
-          <div class="footer-brand-icon"><img src="mascot.png" alt="로고" style="width:24px;height:24px;object-fit:contain"></div>
-          <span class="footer-brand-text">퍼플에그</span>
+        <button class="footer-brand" onclick="goPage('home')" aria-label="홈으로 이동">
+          <img src="logo.png" alt="퍼플에그 미래창의교육" style="height:40px;width:auto;display:block;filter:brightness(0) invert(1) opacity(.95)" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+          <span class="footer-brand-text" style="display:none">퍼플에그</span>
+        </button>
+        <p class="footer-desc">스스로 내일을 만드는 아이들.<br>미래 역량 강화 프로그램</p>
+        <div class="footer-biz">
+          <p>상호: 퍼플에그 미래창의교육</p>
+          <p>대표자: [대표자명]</p>
+          <p>사업자등록번호: [000-00-00000]</p>
+          <p>주소: [학원 도로명 주소]</p>
+          <p>전화: [대표 전화번호]</p>
+          <p>이메일: [대표 이메일]</p>
         </div>
-        <p class="footer-desc">스스로 내일을 만드는 아이들.<br>초등 3·4학년 미래 역량 강화 프로그램</p>
       </div>
       <div>
         <div class="footer-col-title">바로가기</div>
         <div class="footer-links">
-          <a onclick="showPage('home')">홈</a>
-          <a onclick="showPage('programs')">10대 프로그램</a>
-          <a onclick="showPage('philosophy')">교육 철학</a>
-          <a onclick="showPage('consultation')">상담 신청</a>
+          <a href="#/home">홈</a>
+          <a href="#/programs">10대 프로그램</a>
+          <a href="#/philosophy">교육 철학</a>
+          <a href="#/consultation">상담 신청</a>
         </div>
       </div>
       <div>
         <div class="footer-col-title">수업 안내</div>
         <div style="font-size:13px;line-height:2">
-          <p>대상: 초등 3·4학년</p>
           <p>시간: 주 1회 2시간</p>
           <p>정원: 6~8명 소규모</p>
-          <p style="margin-top:8px"><a onclick="showPage('consultation')" style="color:#a78bfa;cursor:pointer">→ 상담 신청하기</a></p>
+          <p style="margin-top:8px"><a href="#/consultation" style="color:#a78bfa">→ 상담 신청하기</a></p>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">정책</div>
+        <div class="footer-links">
+          <button onclick="openModal('privacy-modal')">개인정보처리방침</button>
+          <button onclick="openModal('terms-modal')">이용약관</button>
         </div>
       </div>
     </div>
-    <div class="footer-bottom">© 2024 퍼플에그. All rights reserved. &nbsp;|&nbsp; <a onclick="showPage('admin')" style="color:#4b5563;cursor:pointer;text-decoration:underline">관리자</a></div>
+    <div class="footer-bottom">
+      <span id="copyright">© 2026 퍼플에그. All rights reserved.</span>
+      &nbsp;|&nbsp;
+      <button onclick="goPage('admin')">관리자</button>
+    </div>
   </div>
 </footer>
 
 <script>
-// ═══════════════════════════════════════════════
+'use strict';
+
+// ═══════════════════════════════════════════════════════════════
+// 설정 - 여기만 수정하시면 됩니다
+// ═══════════════════════════════════════════════════════════════
+const CONFIG = {
+  // Google Apps Script 웹앱 URL (SETUP.md 참고)
+  // 예: 'https://script.google.com/macros/s/AKfycbx.../exec'
+  APPS_SCRIPT_URL: '',
+
+  // 학원명
+  SITE_NAME: '퍼플에그 미래창의교육',
+};
+
+// ═══════════════════════════════════════════════════════════════
 // 데이터
-// ═══════════════════════════════════════════════
+// ═══════════════════════════════════════════════════════════════
 const PROGRAMS_DATA = [
-  {num:1,name:'상상 렌즈',icon:'🔍',sub:'생각을 뒤집는 습관',cat:'관점전환 · 질문하는 습관',color:'#7c3aed',bg:'#faf5ff',border:'#c4b5fd',qborder:'#a78bfa',
+  {num:1,name:'상상 렌즈',icon:'🔍',sub:'생각을 뒤집는 습관',cat:'관점전환 · 질문하는 습관',color:'#7c3aed',bg:'#faf5ff',border:'#c4b5fd',qborder:'#a78bfa',badgeBg:'#f3f0ff',badgeColor:'#7c3aed',
    curr:['1–4주: 고정관념 깨기 (빌런의 시선으로 동화 다시 쓰기)','5–8주: "만약에" 시나리오 토론 (돈/전기가 사라진 세상)','9–12주: 불합리한 관습을 고치는 "새로운 규칙" 매뉴얼북 제작'],quote:'당연한 것을 의심할 때 창의성이 시작됩니다.'},
-  {num:2,name:'가치 공작소',icon:'🏪',sub:'우리 동네의 문제 해결',cat:'문제해결 · 창업가 정신',color:'#b45309',bg:'#fffbeb',border:'#fcd34d',qborder:'#f59e0b',
+  {num:2,name:'가치 공작소',icon:'🏪',sub:'우리 동네의 문제 해결',cat:'문제해결 · 창업가 정신',color:'#b45309',bg:'#fffbeb',border:'#fcd34d',qborder:'#f59e0b',badgeBg:'#fef9c3',badgeColor:'#b45309',
    curr:['1–4주: 동네 지도를 펼쳐 "불편함" 탐색 및 아이템 피칭','5–8주: 비즈니스 모델링 및 브랜드 로고/광고 기획','9–12주: 학원 내 "미래 마켓" 개최 및 실제 가치 창출'],quote:'지도는 아이들에게 문제 해결의 무대가 됩니다.'},
-  {num:3,name:'AI 파트너',icon:'🤖',sub:'AI와 협업하는 창의성',cat:'기술공생 · 디지털 문해력',color:'#1d4ed8',bg:'#eff6ff',border:'#93c5fd',qborder:'#3b82f6',
+  {num:3,name:'AI 파트너',icon:'🤖',sub:'AI와 협업하는 창의성',cat:'기술공생 · 디지털 문해력',color:'#1d4ed8',bg:'#eff6ff',border:'#93c5fd',qborder:'#3b82f6',badgeBg:'#dbeafe',badgeColor:'#1d4ed8',
    curr:['1–4주: AI와 대화하는 법 (프롬프트 엔지니어링 기초)','5–8주: 생성형 AI를 활용한 융합 창작 (전자책/웹툰 제작)','9–12주: AI 윤리 및 저작권 토론, "나만의 AI 가이드" 수립'],quote:'AI를 경쟁 상대가 아닌 지능형 비서로 활용합니다.'},
-  {num:4,name:'내일의 한 걸음',icon:'🌱',sub:'체인지 메이커',cat:'공감능력 · 사회적 기여',color:'#15803d',bg:'#f0fdf4',border:'#86efac',qborder:'#22c55e',
+  {num:4,name:'내일의 한 걸음',icon:'🌱',sub:'체인지 메이커',cat:'공감능력 · 사회적 기여',color:'#15803d',bg:'#f0fdf4',border:'#86efac',qborder:'#22c55e',badgeBg:'#dcfce7',badgeColor:'#15803d',
    curr:['1–4주: 공동체 문제 현장 조사 및 관련 인터뷰','5–8주: 캠페인 기획 및 공공기관 제안서 발송','9–12주: 캠페인 영상 제작 및 최종 데모데이 발표'],quote:'작은 변화를 직접 만들어낸 효능감을 체득합니다.'},
-  {num:5,name:'이야기 설계사',icon:'📖',sub:'나만의 세계를 만드는 힘',cat:'스토리텔링 · 표현력',color:'#be185d',bg:'#fdf2f8',border:'#f9a8d4',qborder:'#ec4899',
+  {num:5,name:'이야기 설계사',icon:'📖',sub:'나만의 세계를 만드는 힘',cat:'스토리텔링 · 표현력',color:'#be185d',bg:'#fdf2f8',border:'#f9a8d4',qborder:'#ec4899',badgeBg:'#fce7f3',badgeColor:'#be185d',
    curr:['1–4주: 이야기 구조 탐색 (기승전결, 영웅 서사 분석)','5–8주: 나만의 캐릭터와 세계관 설계, 그림책 제작','9–12주: 스토리 피칭 대회 및 또래 피드백 워크숍'],quote:'이야기를 만드는 아이는 세상을 설계하는 어른이 됩니다.'},
-  {num:6,name:'숫자 탐험대',icon:'📊',sub:'데이터로 세상 읽기',cat:'데이터 리터러시 · 논리사고',color:'#c2410c',bg:'#fff7ed',border:'#fdba74',qborder:'#f97316',
+  {num:6,name:'숫자 탐험대',icon:'📊',sub:'데이터로 세상 읽기',cat:'데이터 리터러시 · 논리사고',color:'#c2410c',bg:'#fff7ed',border:'#fdba74',qborder:'#f97316',badgeBg:'#ffedd5',badgeColor:'#c2410c',
    curr:['1–4주: 우리 반/학교 데이터 수집 (설문, 관찰, 측정)','5–8주: 그래프와 인포그래픽으로 데이터 시각화','9–12주: "데이터 뉴스" 제작 및 발표'],quote:'숫자 뒤에 숨은 이야기를 찾는 탐정이 됩니다.'},
-  {num:7,name:'지구 수호대',icon:'🌍',sub:'지속 가능한 내일 만들기',cat:'환경 감수성 · 지속가능성',color:'#0f766e',bg:'#f0fdfa',border:'#5eead4',qborder:'#14b8a6',
+  {num:7,name:'지구 수호대',icon:'🌍',sub:'지속 가능한 내일 만들기',cat:'환경 감수성 · 지속가능성',color:'#0f766e',bg:'#f0fdfa',border:'#5eead4',qborder:'#14b8a6',badgeBg:'#ccfbf1',badgeColor:'#0f766e',
    curr:['1–4주: 기후변화·환경오염 현장 탐사 및 문제 발견','5–8주: 업사이클링 프로젝트 및 친환경 솔루션 설계','9–12주: 환경 캠페인 포스터/영상 제작, 실천 서약 발표'],quote:'지구를 지키는 작은 실천이 큰 변화를 만듭니다.'},
-  {num:8,name:'감정 나침반',icon:'🧭',sub:'나를 이해하는 첫 걸음',cat:'감성 지능 · 자기 이해',color:'#be123c',bg:'#fff1f2',border:'#fda4af',qborder:'#f43f5e',
+  {num:8,name:'감정 나침반',icon:'🧭',sub:'나를 이해하는 첫 걸음',cat:'감성 지능 · 자기 이해',color:'#be123c',bg:'#fff1f2',border:'#fda4af',qborder:'#f43f5e',badgeBg:'#ffe4e6',badgeColor:'#be123c',
    curr:['1–4주: 감정 일기 쓰기 및 감정 어휘 확장 프로젝트','5–8주: 공감 롤플레이 및 갈등 해결 시뮬레이션','9–12주: "감정 사전" 제작 및 나만의 마음 관리 루틴 설계'],quote:'자기 감정을 아는 아이가 타인도 이해합니다.'},
-  {num:9,name:'문화 여행자',icon:'✈️',sub:'다양성 속 나를 발견하다',cat:'다문화 이해 · 글로벌 시민',color:'#3730a3',bg:'#eef2ff',border:'#a5b4fc',qborder:'#6366f1',
+  {num:9,name:'문화 여행자',icon:'✈️',sub:'다양성 속 나를 발견하다',cat:'다문화 이해 · 글로벌 시민',color:'#3730a3',bg:'#eef2ff',border:'#a5b4fc',qborder:'#6366f1',badgeBg:'#e0e7ff',badgeColor:'#3730a3',
    curr:['1–4주: 세계 문화 탐험 (음식, 놀이, 축제 비교 체험)','5–8주: 다문화 친구 인터뷰 및 문화 교류 프로젝트','9–12주: "세계 시민 선언문" 작성 및 글로벌 문화 축제 개최'],quote:'다름을 존중할 줄 아는 아이가 세계를 이끕니다.'},
-  {num:10,name:'놀이 발명가',icon:'⚙️',sub:'상상을 현실로 만드는 손',cat:'메이커 교육 · 창의적 제작',color:'#b45309',bg:'#fffbeb',border:'#fde68a',qborder:'#d97706',
+  {num:10,name:'놀이 발명가',icon:'⚙️',sub:'상상을 현실로 만드는 손',cat:'메이커 교육 · 창의적 제작',color:'#b45309',bg:'#fffbeb',border:'#fde68a',qborder:'#d97706',badgeBg:'#fef3c7',badgeColor:'#b45309',
    curr:['1–4주: 일상 속 불편함 발견 및 아이디어 스케치','5–8주: 프로토타입 제작 (종이, 클레이, 간단한 코딩)','9–12주: 발명품 전시회 및 특허 출원 체험 (모의)'],quote:'놀이에서 시작된 호기심이 발명의 씨앗이 됩니다.'},
-]
+];
+
+const FAQ_DATA = [
+  {q:'선행학습과 다른 점은 무엇인가요?', a:'지식 전달이 아닌 사고력 훈련에 집중합니다. 교과 성적도 자연스럽게 향상됩니다.'},
+  {q:'소극적인 아이도 참여할 수 있나요?', a:'6~8명 소규모 운영으로 모든 아이가 발언 기회를 보장받습니다.'},
+  {q:'숙제가 있나요?', a:'별도 숙제 없이 수업 시간 내 완결형으로 진행됩니다.'},
+  {q:'다른 학원과 병행 가능한가요?', a:'주 1회 2시간 수업으로 부담 없이 병행 가능합니다.'},
+];
 
 const STATUS_INFO = {
   pending:   {label:'대기중',   cls:'status-pending'},
   contacted: {label:'연락완료', cls:'status-contacted'},
   enrolled:  {label:'등록완료', cls:'status-enrolled'},
   cancelled: {label:'취소',    cls:'status-cancelled'},
+};
+const PROG_NAMES = PROGRAMS_DATA.map(p => p.name);
+
+// ═══════════════════════════════════════════════════════════════
+// 자동 Copyright 연도 업데이트
+// ═══════════════════════════════════════════════════════════════
+(function updateCopyright(){
+  const y = new Date().getFullYear();
+  const el = document.getElementById('copyright');
+  if (el) el.textContent = `© ${y} ${CONFIG.SITE_NAME.split(' ')[0]}. All rights reserved.`;
+})();
+
+// ═══════════════════════════════════════════════════════════════
+// API 래퍼 - Google Apps Script 통신
+// ═══════════════════════════════════════════════════════════════
+async function apiCall(action, payload = {}) {
+  if (!CONFIG.APPS_SCRIPT_URL) {
+    throw new Error('서버가 아직 설정되지 않았습니다. 관리자에게 문의하세요.');
+  }
+  try {
+    // text/plain으로 보내 CORS preflight 우회
+    const res = await fetch(CONFIG.APPS_SCRIPT_URL, {
+      method: 'POST',
+      headers: {'Content-Type': 'text/plain;charset=utf-8'},
+      body: JSON.stringify({action, ...payload}),
+    });
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const data = await res.json();
+    if (!data.ok) throw new Error(data.error || '알 수 없는 오류가 발생했습니다.');
+    return data;
+  } catch (e) {
+    console.error('API 호출 실패:', e);
+    throw e;
+  }
 }
 
-// ═══════════════════════════════════════════════
-// 로컬 스토리지 기반 데이터
-// ═══════════════════════════════════════════════
-function getConsults(){return JSON.parse(localStorage.getItem('pe_consults')||'[]')}
-function saveConsults(d){localStorage.setItem('pe_consults',JSON.stringify(d))}
-function getSchedules(){return JSON.parse(localStorage.getItem('pe_schedules')||'[]')}
-function saveSchedules(d){localStorage.setItem('pe_schedules',JSON.stringify(d))}
-let editProgId=null
+// ═══════════════════════════════════════════════════════════════
+// 라우팅 (History API / Hash)
+// ═══════════════════════════════════════════════════════════════
+const VALID_PAGES = ['home', 'programs', 'philosophy', 'consultation', 'admin'];
 
-// ═══════════════════════════════════════════════
-// 페이지 라우팅
-// ═══════════════════════════════════════════════
-function showPage(name){
-  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'))
-  document.querySelectorAll('.nav-links a, .mobile-menu a').forEach(a=>a.classList.remove('active'))
-  document.getElementById('page-'+name).classList.add('active')
-  const navEl=document.getElementById('nav-'+name)
-  const mobEl=document.getElementById('mob-'+name)
-  if(navEl) navEl.classList.add('active')
-  if(mobEl) mobEl.classList.add('active')
-  window.scrollTo({top:0,behavior:'smooth'})
-  if(name==='programs') renderPrograms()
-  if(name==='admin') refreshAdmin()
-  if(name==='consultation') resetForm()
+function parseHash() {
+  const h = window.location.hash.replace(/^#\/?/, '').split('?')[0];
+  return VALID_PAGES.includes(h) ? h : 'home';
 }
 
-// ═══════════════════════════════════════════════
-// 스크롤 이벤트
-// ═══════════════════════════════════════════════
-window.addEventListener('scroll',()=>{
-  document.getElementById('nav').classList.toggle('scrolled',window.scrollY>20)
-})
-
-// ═══════════════════════════════════════════════
-// 모바일 메뉴
-// ═══════════════════════════════════════════════
-let mobileOpen=false
-function toggleMobile(){
-  mobileOpen=!mobileOpen
-  document.getElementById('mobile-menu').style.display=mobileOpen?'block':'none'
-}
-function closeMobile(){mobileOpen=false;document.getElementById('mobile-menu').style.display='none'}
-
-// ═══════════════════════════════════════════════
-// FAQ
-// ═══════════════════════════════════════════════
-function toggleFaq(el){
-  const ans=el.nextElementSibling
-  const tog=el.querySelector('.faq-toggle')
-  const isOpen=ans.classList.contains('open')
-  document.querySelectorAll('.faq-a').forEach(a=>a.classList.remove('open'))
-  document.querySelectorAll('.faq-toggle').forEach(t=>t.textContent='+')
-  if(!isOpen){ans.classList.add('open');tog.textContent='−'}
+function goPage(name) {
+  if (!VALID_PAGES.includes(name)) name = 'home';
+  if (window.location.hash !== `#/${name}`) {
+    window.location.hash = `/${name}`;
+  } else {
+    renderPage(name);
+  }
 }
 
-// ═══════════════════════════════════════════════
+function renderPage(name) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.nav-links a, .mobile-menu a').forEach(a => a.classList.remove('active'));
+  const pageEl = document.getElementById('page-' + name);
+  if (pageEl) pageEl.classList.add('active');
+  const navEl = document.getElementById('nav-' + name);
+  const mobEl = document.getElementById('mob-' + name);
+  if (navEl) navEl.classList.add('active');
+  if (mobEl) mobEl.classList.add('active');
+  window.scrollTo({top: 0, behavior: 'smooth'});
+  if (name === 'programs') renderPrograms();
+  if (name === 'admin') showAdminView();
+  if (name === 'consultation') resetForm();
+  closeMobile();
+  // 페이지별 타이틀
+  const titles = {
+    home: '퍼플에그 | 초등 미래 역량 강화 프로그램 · AI 시대 창의교육',
+    programs: '10대 핵심 프로그램 | 퍼플에그',
+    philosophy: '교육 철학 | 퍼플에그',
+    consultation: '무료 상담 신청 | 퍼플에그',
+    admin: '관리자 | 퍼플에그',
+  };
+  document.title = titles[name] || titles.home;
+}
+
+window.addEventListener('hashchange', () => renderPage(parseHash()));
+
+// ═══════════════════════════════════════════════════════════════
+// 스크롤·모바일 메뉴
+// ═══════════════════════════════════════════════════════════════
+window.addEventListener('scroll', () => {
+  document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 20);
+});
+
+let mobileOpen = false;
+function toggleMobile() {
+  mobileOpen = !mobileOpen;
+  const m = document.getElementById('mobile-menu');
+  const h = document.getElementById('hamburger');
+  m.classList.toggle('open', mobileOpen);
+  h.classList.toggle('open', mobileOpen);
+  h.setAttribute('aria-expanded', mobileOpen);
+  h.setAttribute('aria-label', mobileOpen ? '메뉴 닫기' : '메뉴 열기');
+}
+function closeMobile() {
+  if (!mobileOpen) return;
+  mobileOpen = false;
+  document.getElementById('mobile-menu').classList.remove('open');
+  const h = document.getElementById('hamburger');
+  h.classList.remove('open');
+  h.setAttribute('aria-expanded', 'false');
+  h.setAttribute('aria-label', '메뉴 열기');
+}
+
+// ═══════════════════════════════════════════════════════════════
+// 모달 (개인정보, 이용약관)
+// ═══════════════════════════════════════════════════════════════
+function openModal(id) {
+  document.getElementById(id).classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal(id) {
+  document.getElementById(id).classList.remove('open');
+  document.body.style.overflow = '';
+}
+document.querySelectorAll('.modal-bg').forEach(bg => {
+  bg.addEventListener('click', e => { if (e.target === bg) closeModal(bg.id); });
+});
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') {
+    document.querySelectorAll('.modal-bg.open').forEach(m => closeModal(m.id));
+  }
+});
+
+// ═══════════════════════════════════════════════════════════════
+// 홈 프로그램 미리보기 렌더
+// ═══════════════════════════════════════════════════════════════
+function renderProgramPreview() {
+  const el = document.getElementById('prog-preview-grid');
+  if (!el) return;
+  // 홈에서는 앞 6개만 미리보기
+  el.innerHTML = PROGRAMS_DATA.slice(0, 6).map(p => `
+    <a class="prog-card" href="#/programs" aria-label="${p.name} 자세히 보기">
+      <div class="prog-card-top">
+        <span class="prog-icon" aria-hidden="true">${p.icon}</span>
+        <div>
+          <div class="prog-num">${String(p.num).padStart(2,'0')}</div>
+          <div class="prog-name">${p.name}</div>
+          <span class="prog-badge" style="background:${p.badgeBg};color:${p.badgeColor}">${p.cat}</span>
+        </div>
+      </div>
+    </a>
+  `).join('');
+}
+
+// ═══════════════════════════════════════════════════════════════
+// FAQ 렌더
+// ═══════════════════════════════════════════════════════════════
+function renderFaq() {
+  const el = document.getElementById('faq-list');
+  if (!el) return;
+  el.innerHTML = FAQ_DATA.map((f, i) => `
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false" aria-controls="faq-a-${i}">
+        <span class="faq-q-left"><span class="faq-q-badge" aria-hidden="true">Q</span>${f.q}</span>
+        <span class="faq-toggle" aria-hidden="true">+</span>
+      </button>
+      <div class="faq-a" id="faq-a-${i}" role="region"><p>${f.a}</p></div>
+    </div>
+  `).join('');
+}
+function toggleFaq(btn) {
+  const ans = btn.nextElementSibling;
+  const tog = btn.querySelector('.faq-toggle');
+  const isOpen = ans.classList.contains('open');
+  document.querySelectorAll('.faq-a').forEach(a => a.classList.remove('open'));
+  document.querySelectorAll('.faq-q').forEach(q => {
+    q.setAttribute('aria-expanded', 'false');
+    q.querySelector('.faq-toggle').textContent = '+';
+  });
+  if (!isOpen) {
+    ans.classList.add('open');
+    btn.setAttribute('aria-expanded', 'true');
+    tog.textContent = '−';
+  }
+}
+
+// ═══════════════════════════════════════════════════════════════
 // 프로그램 페이지 렌더
-// ═══════════════════════════════════════════════
-function renderPrograms(){
-  const grid=document.getElementById('prog-full-grid')
-  grid.innerHTML=PROGRAMS_DATA.map(p=>`
-    <div style="background:${p.bg};border:2px solid ${p.border};border-radius:20px;padding:28px">
+// ═══════════════════════════════════════════════════════════════
+function renderPrograms() {
+  const grid = document.getElementById('prog-full-grid');
+  grid.innerHTML = PROGRAMS_DATA.map(p => `
+    <article style="background:${p.bg};border:2px solid ${p.border};border-radius:20px;padding:28px">
       <div style="display:flex;gap:16px;align-items:flex-start;margin-bottom:18px">
-        <div style="width:52px;height:52px;background:#fff;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:26px;box-shadow:0 2px 8px rgba(0,0,0,.08);flex-shrink:0">${p.icon}</div>
+        <div style="width:52px;height:52px;background:#fff;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:26px;box-shadow:0 2px 8px rgba(0,0,0,.08);flex-shrink:0" aria-hidden="true">${p.icon}</div>
         <div>
           <div style="display:flex;align-items:center;gap:8px;margin-bottom:4px">
             <span style="font-size:11px;font-family:monospace;font-weight:700;color:#aaa">${String(p.num).padStart(2,'0')}</span>
-            <span style="font-size:18px;font-weight:900;color:#111">${p.name}</span>
+            <h3 style="font-size:18px;font-weight:900;color:#111">${p.name}</h3>
           </div>
           <div style="font-size:13px;color:#6b7280;margin-bottom:6px">${p.sub}</div>
           <span style="background:#fff;color:${p.color};padding:3px 10px;border-radius:99px;font-size:11px;font-weight:700;border:1px solid ${p.border}">${p.cat}</span>
         </div>
       </div>
-      <ul style="list-style:none;margin-bottom:16px">${p.curr.map(c=>`<li style="font-size:13px;color:#374151;padding:5px 0 5px 14px;position:relative;line-height:1.6"><span style="position:absolute;left:0;color:#a78bfa">•</span>${c}</li>`).join('')}</ul>
+      <ul style="list-style:none;margin-bottom:16px">${p.curr.map(c => `<li style="font-size:13px;color:#374151;padding:5px 0 5px 14px;position:relative;line-height:1.6"><span style="position:absolute;left:0;color:#a78bfa" aria-hidden="true">•</span>${c}</li>`).join('')}</ul>
       <div style="border-left:4px solid ${p.qborder};padding-left:12px;font-size:13px;color:#6b7280;font-style:italic;line-height:1.6">"${p.quote}"</div>
-    </div>
-  `).join('')
+    </article>
+  `).join('');
 }
 
-// ═══════════════════════════════════════════════
+// ═══════════════════════════════════════════════════════════════
 // 상담 신청 폼
-// ═══════════════════════════════════════════════
-function resetForm(){
-  const el=document.getElementById('form-wrap')
-  el.innerHTML=`
-    <div id="form-alert" class="alert" style="display:none">⚠️ <span id="form-alert-msg"></span></div>
-    <form id="consult-form" onsubmit="submitForm(event)">
+// ═══════════════════════════════════════════════════════════════
+function resetForm() {
+  const el = document.getElementById('form-wrap');
+  const configured = !!CONFIG.APPS_SCRIPT_URL;
+  const warning = configured ? '' : `<div class="alert">⚠️ 상담 신청 시스템이 아직 설정되지 않았습니다. 관리자가 Google Apps Script 설정을 완료해야 신청이 접수됩니다.</div>`;
+  el.innerHTML = `
+    ${warning}
+    <div id="form-alert" class="alert" style="display:none"><span>⚠️</span><span id="form-alert-msg"></span></div>
+    <form id="consult-form" onsubmit="submitForm(event)" novalidate>
       <div class="form-grid">
-        <div class="form-group"><label class="form-label">학부모 이름 <span>*</span></label><input class="form-input" id="f-parent" placeholder="홍길동"><div class="form-error" id="err-parent"></div></div>
-        <div class="form-group"><label class="form-label">자녀 이름 <span>*</span></label><input class="form-input" id="f-child" placeholder="홍소율"><div class="form-error" id="err-child"></div></div>
-        <div class="form-group"><label class="form-label">자녀 학년 <span>*</span></label><select class="form-input" id="f-grade"><option value="">선택해주세요</option><option>초등 3학년</option><option>초등 4학년</option><option>초등 3학년 예정</option><option>초등 4학년 예정</option><option>기타</option></select><div class="form-error" id="err-grade"></div></div>
-        <div class="form-group"><label class="form-label">연락처 <span>*</span></label><input class="form-input" id="f-phone" placeholder="010-1234-5678"><div class="form-error" id="err-phone"></div></div>
-        <div class="form-group"><label class="form-label">이메일 <small>(선택)</small></label><input class="form-input" id="f-email" type="email" placeholder="example@email.com"></div>
-        <div class="form-group"><label class="form-label">관심 프로그램 <small>(선택)</small></label><select class="form-input" id="f-program"><option value="">선택해주세요</option><option>01. 상상 렌즈</option><option>02. 가치 공작소</option><option>03. AI 파트너</option><option>04. 내일의 한 걸음</option><option>05. 이야기 설계사</option><option>06. 숫자 탐험대</option><option>07. 지구 수호대</option><option>08. 감정 나침반</option><option>09. 문화 여행자</option><option>10. 놀이 발명가</option><option>아직 결정 못 했어요</option></select></div>
-        <div class="form-group full"><label class="form-label">문의 내용 <small>(선택)</small></label><textarea class="form-input" id="f-message" rows="4" placeholder="궁금하신 점이나 전달하고 싶은 내용을 자유롭게 작성해주세요." style="resize:none"></textarea></div>
-        <div class="form-group full"><div style="background:#f9fafb;border-radius:12px;padding:16px"><label class="form-check"><input type="checkbox" id="f-agree"><span><strong>개인정보 수집 및 이용에 동의합니다.</strong><br>수집 항목: 이름, 연락처, 이메일 / 목적: 상담 안내 / 보유기간: 상담 완료 후 1년</span></label><div class="form-error" id="err-agree"></div></div></div>
+        <div class="form-group"><label class="form-label" for="f-parent">학부모 이름 <span class="req">*</span></label><input class="form-input" id="f-parent" placeholder="홍길동" autocomplete="name" required><div class="form-error" id="err-parent"></div></div>
+        <div class="form-group"><label class="form-label" for="f-child">자녀 이름 <span class="req">*</span></label><input class="form-input" id="f-child" placeholder="홍소율" required><div class="form-error" id="err-child"></div></div>
+        <div class="form-group"><label class="form-label" for="f-grade">자녀 학년 <span class="req">*</span></label><select class="form-input" id="f-grade" required><option value="">선택해주세요</option><option>초등 3학년</option><option>초등 4학년</option><option>초등 3학년 예정</option><option>초등 4학년 예정</option><option>기타</option></select><div class="form-error" id="err-grade"></div></div>
+        <div class="form-group"><label class="form-label" for="f-phone">연락처 <span class="req">*</span></label><input class="form-input" id="f-phone" placeholder="010-1234-5678" type="tel" inputmode="tel" autocomplete="tel" required><div class="form-error" id="err-phone"></div></div>
+        <div class="form-group"><label class="form-label" for="f-email">이메일 <small>(선택)</small></label><input class="form-input" id="f-email" type="email" placeholder="example@email.com" autocomplete="email"><div class="form-error" id="err-email"></div></div>
+        <div class="form-group"><label class="form-label" for="f-program">관심 프로그램 <small>(선택)</small></label><select class="form-input" id="f-program"><option value="">선택해주세요</option>${PROGRAMS_DATA.map(p => `<option>${String(p.num).padStart(2,'0')}. ${p.name}</option>`).join('')}<option>아직 결정 못 했어요</option></select></div>
+        <div class="form-group full"><label class="form-label" for="f-message">문의 내용 <small>(선택)</small></label><textarea class="form-input" id="f-message" rows="4" placeholder="궁금하신 점이나 전달하고 싶은 내용을 자유롭게 작성해주세요." style="resize:vertical;max-height:300px" maxlength="1000"></textarea></div>
+        <div class="form-group full"><div style="background:#f9fafb;border-radius:12px;padding:16px"><label class="form-check"><input type="checkbox" id="f-agree" required><span><strong><button type="button" onclick="openModal('privacy-modal')">개인정보 수집·이용</button>에 동의합니다.</strong><br>수집 항목: 이름, 연락처, 이메일 / 목적: 상담 안내 / 보유기간: 상담 완료 후 1년</span></label><div class="form-error" id="err-agree"></div></div></div>
       </div>
-      <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;font-size:16px;padding:16px">상담 신청하기 🥚</button>
+      <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;font-size:16px;padding:16px" id="submit-btn"${configured ? '' : ' disabled'}>상담 신청하기 🥚</button>
     </form>
-  `
+  `;
 }
 
-function submitForm(e){
-  e.preventDefault()
-  let ok=true
-  const clear=id=>{document.getElementById(id).textContent='';document.getElementById(id.replace('err-','f-')).classList.remove('error')}
-  const err=(id,msg)=>{document.getElementById(id).textContent=msg;document.getElementById(id.replace('err-','f-')).classList.add('error');ok=false}
-  clear('err-parent');clear('err-child');clear('err-grade');clear('err-phone');
-  const parent=document.getElementById('f-parent').value.trim()
-  const child=document.getElementById('f-child').value.trim()
-  const grade=document.getElementById('f-grade').value
-  const phone=document.getElementById('f-phone').value.trim()
-  const agree=document.getElementById('f-agree').checked
-  if(!parent) err('err-parent','학부모 이름을 입력해주세요.')
-  if(!child) err('err-child','자녀 이름을 입력해주세요.')
-  if(!grade) err('err-grade','학년을 선택해주세요.')
-  if(!phone) err('err-phone','연락처를 입력해주세요.')
-  else if(!/^[0-9\-\s]+$/.test(phone)) err('err-phone','올바른 전화번호를 입력해주세요.')
-  if(!agree){document.getElementById('err-agree').textContent='개인정보 수집에 동의해주세요.';ok=false}
-  if(!ok) return
-  const data={
-    id:Date.now(),
-    parent_name:parent, child_name:child, child_grade:grade, phone,
-    email:document.getElementById('f-email').value,
-    program_interest:document.getElementById('f-program').value,
-    message:document.getElementById('f-message').value,
-    status:'pending', admin_memo:'',
-    created_at:new Date().toLocaleString('ko-KR')
+function validatePhone(phone) {
+  // 01X-XXXX-XXXX 또는 010XXXXXXXX, 하이픈·공백 허용
+  const cleaned = phone.replace(/[-\s]/g, '');
+  return /^01[0-9]{8,9}$/.test(cleaned);
+}
+function validateEmail(email) {
+  if (!email) return true;
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+}
+
+async function submitForm(e) {
+  e.preventDefault();
+  let ok = true;
+  const clear = id => {
+    const err = document.getElementById(id);
+    const inp = document.getElementById(id.replace('err-', 'f-'));
+    if (err) err.textContent = '';
+    if (inp) inp.classList.remove('error');
+  };
+  const err = (id, msg) => {
+    const elErr = document.getElementById(id);
+    const inp = document.getElementById(id.replace('err-', 'f-'));
+    if (elErr) elErr.textContent = msg;
+    if (inp) inp.classList.add('error');
+    ok = false;
+  };
+
+  ['err-parent','err-child','err-grade','err-phone','err-email','err-agree'].forEach(clear);
+
+  const parent = document.getElementById('f-parent').value.trim();
+  const child = document.getElementById('f-child').value.trim();
+  const grade = document.getElementById('f-grade').value;
+  const phone = document.getElementById('f-phone').value.trim();
+  const email = document.getElementById('f-email').value.trim();
+  const agree = document.getElementById('f-agree').checked;
+
+  if (!parent) err('err-parent', '학부모 이름을 입력해주세요.');
+  else if (parent.length < 2) err('err-parent', '이름을 2글자 이상 입력해주세요.');
+  if (!child) err('err-child', '자녀 이름을 입력해주세요.');
+  if (!grade) err('err-grade', '학년을 선택해주세요.');
+  if (!phone) err('err-phone', '연락처를 입력해주세요.');
+  else if (!validatePhone(phone)) err('err-phone', '올바른 휴대폰 번호를 입력해주세요. (예: 010-1234-5678)');
+  if (email && !validateEmail(email)) err('err-email', '올바른 이메일 주소를 입력해주세요.');
+  if (!agree) { document.getElementById('err-agree').textContent = '개인정보 수집에 동의해주세요.'; ok = false; }
+
+  if (!ok) return;
+
+  const btn = document.getElementById('submit-btn');
+  btn.disabled = true;
+  btn.innerHTML = '<span class="spinner"></span> 신청 중...';
+
+  const data = {
+    parent_name: parent,
+    child_name: child,
+    child_grade: grade,
+    phone,
+    email,
+    program_interest: document.getElementById('f-program').value,
+    message: document.getElementById('f-message').value.trim(),
+  };
+
+  try {
+    await apiCall('submitConsult', {data});
+    document.getElementById('form-wrap').innerHTML = `
+      <div class="success-box" role="status">
+        <div class="success-icon" aria-hidden="true">✅</div>
+        <h2 class="success-title">상담 신청이 완료되었습니다!</h2>
+        <p class="success-sub">빠른 시일 내에 연락드리겠습니다.<br>퍼플에그와 함께해 주셔서 감사합니다. 🥚</p>
+        <button class="btn btn-primary" onclick="resetForm()">추가 신청하기</button>
+      </div>
+    `;
+  } catch (ex) {
+    const alertEl = document.getElementById('form-alert');
+    const msgEl = document.getElementById('form-alert-msg');
+    alertEl.style.display = 'flex';
+    msgEl.textContent = ex.message || '신청 중 오류가 발생했습니다. 잠시 후 다시 시도해주세요.';
+    btn.disabled = false;
+    btn.textContent = '상담 신청하기 🥚';
+    window.scrollTo({top: 0, behavior: 'smooth'});
   }
-  const consults=getConsults(); consults.unshift(data); saveConsults(consults)
-  document.getElementById('form-wrap').innerHTML=`
-    <div class="success-box">
-      <div class="success-icon">✅</div>
-      <div class="success-title">상담 신청이 완료되었습니다!</div>
-      <p class="success-sub">빠른 시일 내에 연락드리겠습니다.<br>퍼플에그와 함께해 주셔서 감사합니다. 🥚</p>
-      <button class="btn btn-primary" onclick="resetForm()">추가 신청하기</button>
-    </div>
-  `
 }
 
-// ═══════════════════════════════════════════════
-// 관리자
-// ═══════════════════════════════════════════════
-const ADMIN_ID='admin', ADMIN_PW='purpleegg2024!'
-function adminLogin(){
-  const u=document.getElementById('admin-user').value
-  const p=document.getElementById('admin-pass').value
-  if(u===ADMIN_ID && p===ADMIN_PW){
-    document.getElementById('admin-login-wrap').style.display='none'
-    document.getElementById('admin-panel').style.display='block'
-    refreshAdmin()
+// ═══════════════════════════════════════════════════════════════
+// 관리자 (Apps Script 기반)
+// ═══════════════════════════════════════════════════════════════
+let adminCreds = null; // {username, password} 메모리에만 보관
+
+function getCachedAdmin() {
+  try {
+    const s = sessionStorage.getItem('pe_admin_session');
+    return s ? JSON.parse(s) : null;
+  } catch { return null; }
+}
+function setCachedAdmin(c) {
+  if (c) sessionStorage.setItem('pe_admin_session', JSON.stringify(c));
+  else sessionStorage.removeItem('pe_admin_session');
+}
+
+function showAdminView() {
+  const cached = getCachedAdmin();
+  if (cached) {
+    adminCreds = cached;
+    document.getElementById('admin-login-wrap').style.display = 'none';
+    document.getElementById('admin-panel').style.display = 'block';
+    refreshAdmin();
   } else {
-    const e=document.getElementById('admin-login-err')
-    e.style.display='block'
-    e.textContent='아이디 또는 비밀번호가 올바르지 않습니다.'
+    adminCreds = null;
+    document.getElementById('admin-login-wrap').style.display = 'block';
+    document.getElementById('admin-panel').style.display = 'none';
   }
 }
-function adminLogout(){
-  document.getElementById('admin-login-wrap').style.display='block'
-  document.getElementById('admin-panel').style.display='none'
-  document.getElementById('admin-user').value=''
-  document.getElementById('admin-pass').value=''
-  document.getElementById('admin-login-err').style.display='none'
+
+async function adminLogin() {
+  const u = document.getElementById('admin-user').value.trim();
+  const p = document.getElementById('admin-pass').value;
+  const errEl = document.getElementById('admin-login-err');
+  const btn = document.getElementById('admin-login-btn');
+  errEl.style.display = 'none';
+
+  if (!u || !p) {
+    errEl.style.display = 'block';
+    errEl.textContent = '아이디와 비밀번호를 입력해주세요.';
+    return;
+  }
+
+  btn.disabled = true;
+  btn.innerHTML = '<span class="spinner"></span> 로그인 중...';
+
+  try {
+    await apiCall('adminLogin', {auth: {username: u, password: p}});
+    adminCreds = {username: u, password: p};
+    setCachedAdmin(adminCreds);
+    document.getElementById('admin-pass').value = '';
+    document.getElementById('admin-login-wrap').style.display = 'none';
+    document.getElementById('admin-panel').style.display = 'block';
+    refreshAdmin();
+  } catch (e) {
+    errEl.style.display = 'block';
+    errEl.textContent = e.message.includes('설정') ? e.message : '아이디 또는 비밀번호가 올바르지 않습니다.';
+  } finally {
+    btn.disabled = false;
+    btn.innerHTML = '🔑 로그인';
+  }
 }
-function refreshAdmin(){adminTab('dashboard',document.querySelector('.admin-tab'))}
-function adminTab(name, btn){
-  document.querySelectorAll('.admin-tab').forEach(t=>t.classList.remove('active'))
-  if(btn) btn.classList.add('active')
-  document.getElementById('admin-dashboard').style.display=name==='dashboard'?'block':'none'
-  document.getElementById('admin-consultations').style.display=name==='consultations'?'block':'none'
-  document.getElementById('admin-schedule').style.display=name==='schedule'?'block':'none'
-  if(name==='dashboard') renderDashboard()
-  if(name==='consultations') renderConsultList()
-  if(name==='schedule') renderSchedule()
+
+function adminLogout() {
+  adminCreds = null;
+  setCachedAdmin(null);
+  document.getElementById('admin-user').value = '';
+  document.getElementById('admin-pass').value = '';
+  document.getElementById('admin-login-err').style.display = 'none';
+  document.getElementById('admin-login-wrap').style.display = 'block';
+  document.getElementById('admin-panel').style.display = 'none';
 }
-function renderDashboard(){
-  const c=getConsults()
-  const pending=c.filter(x=>x.status==='pending').length
-  const contacted=c.filter(x=>x.status==='contacted').length
-  const enrolled=c.filter(x=>x.status==='enrolled').length
-  const schedules=getSchedules()
-  document.getElementById('stat-cards').innerHTML=`
-    <div class="s-card"><div class="s-card-icon" style="background:#f3f0ff">👥</div><div class="s-card-val">${c.length}</div><div class="s-card-lbl">전체 상담 신청</div></div>
-    <div class="s-card"><div class="s-card-icon" style="background:#fef9c3">⏳</div><div class="s-card-val">${pending}</div><div class="s-card-lbl">대기중</div></div>
-    <div class="s-card"><div class="s-card-icon" style="background:#dbeafe">📞</div><div class="s-card-val">${contacted}</div><div class="s-card-lbl">연락완료</div></div>
-    <div class="s-card"><div class="s-card-icon" style="background:#dcfce7">✅</div><div class="s-card-val">${enrolled}</div><div class="s-card-lbl">등록완료</div></div>
-    <div class="s-card"><div class="s-card-icon" style="background:#f3f0ff">📅</div><div class="s-card-val">${schedules.length}</div><div class="s-card-lbl">프로그램 일정</div></div>
-    <div class="s-card"><div class="s-card-icon" style="background:#dcfce7">🟢</div><div class="s-card-val">${schedules.filter(s=>s.active).length}</div><div class="s-card-lbl">모집중</div></div>
-  `
-  const recent=c.slice(0,5)
-  document.getElementById('recent-consults').innerHTML=recent.length===0
-    ? '<p style="color:#9ca3af;font-size:14px">신청 내역이 없습니다.</p>'
-    : recent.map(x=>consultCardHTML(x,true)).join('')
+
+function adminApi(action, payload = {}) {
+  if (!adminCreds) throw new Error('로그인이 필요합니다.');
+  return apiCall(action, {...payload, auth: adminCreds});
 }
-function renderConsultList(filter=''){
-  const all=getConsults()
-  const list=filter?all.filter(x=>x.status===filter):all
-  const el=document.getElementById('consult-list-full')
-  el.innerHTML=list.length===0
-    ? '<p style="color:#9ca3af;text-align:center;padding:32px">신청 내역이 없습니다.</p>'
-    : list.map(x=>consultCardHTML(x,false)).join('')
+
+function refreshAdmin() {
+  const activeTab = document.querySelector('.admin-tab.active');
+  const label = activeTab ? activeTab.textContent : '';
+  if (label.includes('상담')) adminTab('consultations', activeTab);
+  else if (label.includes('일정')) adminTab('schedule', activeTab);
+  else adminTab('dashboard', document.querySelector('.admin-tab'));
 }
-function filterConsults(v){renderConsultList(v)}
-function consultCardHTML(c,mini){
-  const si=STATUS_INFO[c.status]||STATUS_INFO.pending
-  const statusOpts=Object.entries(STATUS_INFO).map(([k,v])=>{
-    const sel=c.status===k?' selected':''
-    return `<option value="${k}"${sel}>${v.label}</option>`
-  }).join('')
-  const memoVal=(c.admin_memo||'').replace(/"/g,'&quot;')
-  const actions=mini?'':(`<div class="consult-actions">`+
-    `<select class="status-select" onchange="updateStatus(${c.id},this.value)">${statusOpts}</select>`+
-    `<input class="memo-input" placeholder="관리자 메모" value="${memoVal}">`+
-    `<button class="btn-small btn-save" onclick="saveMemo(${c.id},this)">저장</button>`+
-    `<button class="btn-small btn-del" onclick="deleteConsult(${c.id})">삭제</button>`+
-    `</div>`)
-  const emailTxt=c.email?' | ✉️ '+c.email:''
-  const progTxt=c.program_interest?`<div class="consult-prog">관심: ${c.program_interest}</div>`:''
-  const msgTxt=c.message?`<div class="consult-msg">"${c.message}"</div>`:''
-  const memoTxt=c.admin_memo?`<div style="background:#fef9c3;border-radius:8px;padding:6px 10px;font-size:12px;color:#713f12;margin-top:6px">📝 ${c.admin_memo}</div>`:''
+
+function adminTab(name, btn) {
+  document.querySelectorAll('.admin-tab').forEach(t => t.classList.remove('active'));
+  if (btn) btn.classList.add('active');
+  document.getElementById('admin-dashboard').style.display = name === 'dashboard' ? 'block' : 'none';
+  document.getElementById('admin-consultations').style.display = name === 'consultations' ? 'block' : 'none';
+  document.getElementById('admin-schedule').style.display = name === 'schedule' ? 'block' : 'none';
+  if (name === 'dashboard') renderDashboard();
+  if (name === 'consultations') renderConsultList();
+  if (name === 'schedule') renderSchedule();
+}
+
+async function renderDashboard() {
+  document.getElementById('stat-cards').innerHTML = `<div style="text-align:center;padding:24px;grid-column:1/-1"><span class="spinner"></span> 불러오는 중...</div>`;
+  document.getElementById('recent-consults').innerHTML = '';
+  try {
+    const {consults = [], schedules = []} = await adminApi('getAdminData');
+    const pending = consults.filter(x => x.status === 'pending').length;
+    const contacted = consults.filter(x => x.status === 'contacted').length;
+    const enrolled = consults.filter(x => x.status === 'enrolled').length;
+    document.getElementById('stat-cards').innerHTML = `
+      <div class="s-card"><div class="s-card-icon" style="background:#f3f0ff">👥</div><div class="s-card-val">${consults.length}</div><div class="s-card-lbl">전체 상담 신청</div></div>
+      <div class="s-card"><div class="s-card-icon" style="background:#fef9c3">⏳</div><div class="s-card-val">${pending}</div><div class="s-card-lbl">대기중</div></div>
+      <div class="s-card"><div class="s-card-icon" style="background:#dbeafe">📞</div><div class="s-card-val">${contacted}</div><div class="s-card-lbl">연락완료</div></div>
+      <div class="s-card"><div class="s-card-icon" style="background:#dcfce7">✅</div><div class="s-card-val">${enrolled}</div><div class="s-card-lbl">등록완료</div></div>
+      <div class="s-card"><div class="s-card-icon" style="background:#f3f0ff">📅</div><div class="s-card-val">${schedules.length}</div><div class="s-card-lbl">프로그램 일정</div></div>
+      <div class="s-card"><div class="s-card-icon" style="background:#dcfce7">🟢</div><div class="s-card-val">${schedules.filter(s => s.active).length}</div><div class="s-card-lbl">모집중</div></div>
+    `;
+    const recent = consults.slice(0, 5);
+    document.getElementById('recent-consults').innerHTML = recent.length === 0
+      ? '<p style="color:#9ca3af;font-size:14px">신청 내역이 없습니다.</p>'
+      : recent.map(x => consultCardHTML(x, true)).join('');
+  } catch (e) {
+    document.getElementById('stat-cards').innerHTML = `<div class="alert" style="grid-column:1/-1">❌ ${e.message}</div>`;
+  }
+}
+
+async function renderConsultList(filter = '') {
+  const el = document.getElementById('consult-list-full');
+  el.innerHTML = `<div style="text-align:center;padding:32px"><span class="spinner"></span> 불러오는 중...</div>`;
+  try {
+    const {consults = []} = await adminApi('getAdminData');
+    const list = filter ? consults.filter(x => x.status === filter) : consults;
+    el.innerHTML = list.length === 0
+      ? '<p style="color:#9ca3af;text-align:center;padding:32px">신청 내역이 없습니다.</p>'
+      : list.map(x => consultCardHTML(x, false)).join('');
+  } catch (e) {
+    el.innerHTML = `<div class="alert">❌ ${e.message}</div>`;
+  }
+}
+
+function filterConsults(v) { renderConsultList(v); }
+
+function escHtml(s) {
+  return String(s || '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+}
+
+function consultCardHTML(c, mini) {
+  const si = STATUS_INFO[c.status] || STATUS_INFO.pending;
+  const statusOpts = Object.entries(STATUS_INFO).map(([k, v]) => {
+    const sel = c.status === k ? ' selected' : '';
+    return `<option value="${k}"${sel}>${v.label}</option>`;
+  }).join('');
+  const memoVal = escHtml(c.admin_memo || '');
+  const actions = mini ? '' : (`<div class="consult-actions">` +
+    `<select class="status-select" onchange="updateStatus('${c.id}',this.value)" aria-label="상태 변경">${statusOpts}</select>` +
+    `<input class="memo-input" placeholder="관리자 메모" value="${memoVal}" aria-label="관리자 메모">` +
+    `<button class="btn-small btn-save" onclick="saveMemo('${c.id}',this)">저장</button>` +
+    `<button class="btn-small btn-del" onclick="deleteConsult('${c.id}')">삭제</button>` +
+    `</div>`);
+  const emailTxt = c.email ? ' | ✉️ ' + escHtml(c.email) : '';
+  const progTxt = c.program_interest ? `<div class="consult-prog">관심: ${escHtml(c.program_interest)}</div>` : '';
+  const msgTxt = c.message ? `<div class="consult-msg">"${escHtml(c.message)}"</div>` : '';
+  const memoTxt = c.admin_memo ? `<div style="background:#fef9c3;border-radius:8px;padding:6px 10px;font-size:12px;color:#713f12;margin-top:6px">📝 ${escHtml(c.admin_memo)}</div>` : '';
   return `<div class="consult-card" id="cc-${c.id}">
     <div class="consult-head">
       <span class="status-badge ${si.cls}">${si.label}</span>
-      <span class="consult-name">${c.parent_name} 학부모님</span>
-      <span style="font-size:12px;color:#9ca3af">${c.created_at}</span>
+      <span class="consult-name">${escHtml(c.parent_name)} 학부모님</span>
+      <span style="font-size:12px;color:#9ca3af">${escHtml(c.created_at)}</span>
     </div>
-    <div class="consult-info">자녀: ${c.child_name} (${c.child_grade}) | 📞 ${c.phone}${emailTxt}</div>
+    <div class="consult-info">자녀: ${escHtml(c.child_name)} (${escHtml(c.child_grade)}) | 📞 ${escHtml(c.phone)}${emailTxt}</div>
     ${progTxt}${msgTxt}${memoTxt}${actions}
-  </div>`
+  </div>`;
 }
-function updateStatus(id,val){
-  const c=getConsults().map(x=>x.id===id?{...x,status:val}:x)
-  saveConsults(c); renderConsultList()
+
+async function updateStatus(id, val) {
+  try {
+    await adminApi('updateConsult', {id, patch: {status: val}});
+    renderConsultList(document.getElementById('consult-filter').value);
+  } catch (e) { alert('오류: ' + e.message); }
 }
-function saveMemo(id,btn){
-  const wrap=btn.parentElement
-  const memo=wrap.querySelector('.memo-input').value
-  const c=getConsults().map(x=>x.id===id?{...x,admin_memo:memo}:x)
-  saveConsults(c)
-  btn.textContent='✓ 저장됨'
-  setTimeout(()=>{btn.textContent='저장';renderConsultList()},1200)
+async function saveMemo(id, btn) {
+  const wrap = btn.parentElement;
+  const memo = wrap.querySelector('.memo-input').value;
+  try {
+    await adminApi('updateConsult', {id, patch: {admin_memo: memo}});
+    btn.textContent = '✓ 저장됨';
+    setTimeout(() => { btn.textContent = '저장'; renderConsultList(document.getElementById('consult-filter').value); }, 1200);
+  } catch (e) { alert('오류: ' + e.message); }
 }
-function deleteConsult(id){
-  if(!confirm('정말 삭제하시겠습니까?')) return
-  saveConsults(getConsults().filter(x=>x.id!==id)); renderConsultList()
+async function deleteConsult(id) {
+  if (!confirm('정말 삭제하시겠습니까?')) return;
+  try {
+    await adminApi('deleteConsult', {id});
+    renderConsultList(document.getElementById('consult-filter').value);
+  } catch (e) { alert('오류: ' + e.message); }
 }
-function renderSchedule(){
-  const s=getSchedules()
-  const el=document.getElementById('prog-manage-grid')
-  el.innerHTML=s.length===0?'<p style="color:#9ca3af;grid-column:1/-1;text-align:center;padding:32px">등록된 일정이 없습니다.</p>':s.map(p=>`
-    <div class="prog-manage-card">
-      <div class="pm-head">
-        <div><div class="pm-name">${p.name}</div>${p.day?`<div style="font-size:12px;color:#9ca3af;margin-top:2px">${p.day}</div>`:''}</div>
-        <span class="pm-status ${p.active?'active':'closed'}">${p.active?'모집중':'마감'}</span>
-      </div>
-      <div class="pm-info">${p.time?'⏰ '+p.time+' | ':''}정원 ${p.cap}명${p.start?' | 🗓 '+p.start+(p.end?' ~ '+p.end:''):''}</div>
-      <div class="pm-progress">
-        <div class="pm-bar-wrap"><div class="pm-bar" style="width:${Math.round((p.enrolled||0)/p.cap*100)}%"></div></div>
-        <div class="pm-bar-txt">${p.enrolled||0}/${p.cap}명 등록</div>
-      </div>
-      <div class="pm-actions">
-        <button class="btn-small btn-save" onclick="openProgModal(${p.id})">수정</button>
-        <button class="btn-small" style="background:#f3f4f6;color:#374151" onclick="changeEnrolled(${p.id})">등록 수 변경</button>
-        <button class="btn-small btn-del" onclick="deleteProg(${p.id})">삭제</button>
-      </div>
-    </div>
-  `).join('')
-}
-function changeEnrolled(id){
-  const s=getSchedules(); const p=s.find(x=>x.id===id); if(!p) return
-  const n=prompt(`현재 등록 인원: ${p.enrolled||0}명\n새 등록 인원을 입력하세요:`,p.enrolled||0)
-  if(n===null) return
-  const num=parseInt(n)
-  if(isNaN(num)||num<0) return alert('올바른 숫자를 입력하세요.')
-  saveSchedules(s.map(x=>x.id===id?{...x,enrolled:num}:x)); renderSchedule()
-}
-const PROG_NAMES=['상상 렌즈','가치 공작소','AI 파트너','내일의 한 걸음','이야기 설계사','숫자 탐험대','지구 수호대','감정 나침반','문화 여행자','놀이 발명가']
-function autoFillProgName(sel){}
-function openProgModal(id){
-  editProgId=id||null
-  const s=getSchedules(); const p=id?s.find(x=>x.id===id):null
-  document.getElementById('prog-modal-title').textContent=p?'프로그램 수정':'프로그램 추가'
-  document.getElementById('pf-num').value=p?p.num:1
-  document.getElementById('pf-day').value=p?p.day:''
-  document.getElementById('pf-time').value=p?p.time:''
-  document.getElementById('pf-cap').value=p?p.cap:8
-  document.getElementById('pf-start').value=p?p.start:''
-  document.getElementById('pf-end').value=p?p.end:''
-  document.getElementById('pf-active').value=p?(p.active?'true':'false'):'true'
-  document.getElementById('prog-modal').classList.add('open')
-}
-function closeProgModal(){document.getElementById('prog-modal').classList.remove('open');editProgId=null}
-function saveProgram(){
-  const num=parseInt(document.getElementById('pf-num').value)
-  const data={
-    id:editProgId||Date.now(), num,
-    name:String(num).padStart(2,'0')+'. '+PROG_NAMES[num-1],
-    day:document.getElementById('pf-day').value,
-    time:document.getElementById('pf-time').value,
-    cap:parseInt(document.getElementById('pf-cap').value)||8,
-    start:document.getElementById('pf-start').value,
-    end:document.getElementById('pf-end').value,
-    active:document.getElementById('pf-active').value==='true',
-    enrolled:0
+
+async function renderSchedule() {
+  const el = document.getElementById('prog-manage-grid');
+  el.innerHTML = `<div style="grid-column:1/-1;text-align:center;padding:32px"><span class="spinner"></span> 불러오는 중...</div>`;
+  try {
+    const {schedules = []} = await adminApi('getAdminData');
+    el.innerHTML = schedules.length === 0
+      ? '<p style="color:#9ca3af;grid-column:1/-1;text-align:center;padding:32px">등록된 일정이 없습니다.</p>'
+      : schedules.map(p => `
+        <div class="prog-manage-card">
+          <div class="pm-head">
+            <div><div class="pm-name">${escHtml(p.name)}</div>${p.day ? `<div style="font-size:12px;color:#9ca3af;margin-top:2px">${escHtml(p.day)}</div>` : ''}</div>
+            <span class="pm-status ${p.active ? 'active' : 'closed'}">${p.active ? '모집중' : '마감'}</span>
+          </div>
+          <div class="pm-info">${p.time ? '⏰ ' + escHtml(p.time) + ' | ' : ''}정원 ${p.cap}명${p.start ? ' | 🗓 ' + escHtml(p.start) + (p.end ? ' ~ ' + escHtml(p.end) : '') : ''}</div>
+          <div class="pm-progress">
+            <div class="pm-bar-wrap"><div class="pm-bar" style="width:${Math.round((p.enrolled || 0) / p.cap * 100)}%"></div></div>
+            <div class="pm-bar-txt">${p.enrolled || 0}/${p.cap}명 등록</div>
+          </div>
+          <div class="pm-actions">
+            <button class="btn-small btn-save" onclick="openProgModal('${p.id}')">수정</button>
+            <button class="btn-small" style="background:#f3f4f6;color:#374151" onclick="changeEnrolled('${p.id}')">등록 수 변경</button>
+            <button class="btn-small btn-del" onclick="deleteProg('${p.id}')">삭제</button>
+          </div>
+        </div>
+      `).join('');
+  } catch (e) {
+    el.innerHTML = `<div class="alert" style="grid-column:1/-1">❌ ${e.message}</div>`;
   }
-  const s=getSchedules()
-  if(editProgId){saveSchedules(s.map(x=>x.id===editProgId?{...data,enrolled:x.enrolled}:x))}
-  else{s.unshift(data);saveSchedules(s)}
-  closeProgModal(); renderSchedule()
 }
-function deleteProg(id){
-  if(!confirm('정말 삭제하시겠습니까?')) return
-  saveSchedules(getSchedules().filter(x=>x.id!==id)); renderSchedule()
+
+let editProgId = null;
+let cachedSchedules = [];
+
+async function openProgModal(id) {
+  editProgId = id || null;
+  try {
+    if (id) {
+      const {schedules = []} = await adminApi('getAdminData');
+      cachedSchedules = schedules;
+    }
+    const p = id ? cachedSchedules.find(x => String(x.id) === String(id)) : null;
+    document.getElementById('prog-modal-title').textContent = p ? '프로그램 수정' : '프로그램 추가';
+    document.getElementById('pf-num').value = p ? p.num : 1;
+    document.getElementById('pf-day').value = p ? p.day || '' : '';
+    document.getElementById('pf-time').value = p ? p.time || '' : '';
+    document.getElementById('pf-cap').value = p ? p.cap : 8;
+    document.getElementById('pf-start').value = p ? p.start || '' : '';
+    document.getElementById('pf-end').value = p ? p.end || '' : '';
+    document.getElementById('pf-active').value = p ? (p.active ? 'true' : 'false') : 'true';
+    openModal('prog-modal');
+  } catch (e) { alert('오류: ' + e.message); }
 }
+function closeProgModal() { closeModal('prog-modal'); editProgId = null; }
+
+async function saveProgram() {
+  const num = parseInt(document.getElementById('pf-num').value);
+  const data = {
+    num,
+    name: String(num).padStart(2, '0') + '. ' + PROG_NAMES[num - 1],
+    day: document.getElementById('pf-day').value,
+    time: document.getElementById('pf-time').value,
+    cap: parseInt(document.getElementById('pf-cap').value) || 8,
+    start: document.getElementById('pf-start').value,
+    end: document.getElementById('pf-end').value,
+    active: document.getElementById('pf-active').value === 'true',
+  };
+  const btn = document.getElementById('prog-save-btn');
+  btn.disabled = true;
+  btn.innerHTML = '<span class="spinner"></span> 저장 중...';
+  try {
+    if (editProgId) await adminApi('updateSchedule', {id: editProgId, patch: data});
+    else await adminApi('addSchedule', {data});
+    closeProgModal();
+    renderSchedule();
+  } catch (e) {
+    alert('오류: ' + e.message);
+  } finally {
+    btn.disabled = false;
+    btn.textContent = '저장';
+  }
+}
+
+async function changeEnrolled(id) {
+  const {schedules = []} = await adminApi('getAdminData').catch(() => ({schedules: []}));
+  const p = schedules.find(x => String(x.id) === String(id));
+  if (!p) return;
+  const n = prompt(`현재 등록 인원: ${p.enrolled || 0}명\n새 등록 인원을 입력하세요:`, p.enrolled || 0);
+  if (n === null) return;
+  const num = parseInt(n);
+  if (isNaN(num) || num < 0) return alert('올바른 숫자를 입력하세요.');
+  try {
+    await adminApi('updateSchedule', {id, patch: {enrolled: num}});
+    renderSchedule();
+  } catch (e) { alert('오류: ' + e.message); }
+}
+async function deleteProg(id) {
+  if (!confirm('정말 삭제하시겠습니까?')) return;
+  try {
+    await adminApi('deleteSchedule', {id});
+    renderSchedule();
+  } catch (e) { alert('오류: ' + e.message); }
+}
+
+// ═══════════════════════════════════════════════════════════════
+// 초기화
+// ═══════════════════════════════════════════════════════════════
+document.addEventListener('DOMContentLoaded', () => {
+  renderProgramPreview();
+  renderFaq();
+  renderPage(parseHash());
+});
 </script>
 </body>
 </html>
