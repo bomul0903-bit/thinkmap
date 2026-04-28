@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Purple Bean Character - Download</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap');
+
+        :root {
+            --bean-purple: #8B5CF6; /* 조금 더 선명한 보라색 */
+            --bean-face: #FFFFFF;
+            --bean-eye: #2D1B4D;
+            --bean-highlight: rgba(255, 255, 255, 0.5);
+        }
+
+        body {
+            background-color: #f8fafc;
+            font-family: 'Inter', sans-serif;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            user-select: none;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-25px); }
+        }
+
+        @keyframes shadow-scale {
+            0%, 100% { transform: scale(1); opacity: 0.2; }
+            50% { transform: scale(0.7); opacity: 0.1; }
+        }
+
+        .bean {
+            position: relative;
+            width: 180px;
+            height: 230px;
+            background-color: var(--bean-purple);
+            border-radius: 50% 50% 50% 50% / 65% 65% 35% 35%;
+            box-shadow: inset -12px -12px 0px rgba(0,0,0,0.15);
+            animation: float 4s ease-in-out infinite;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: transform 0.1s;
+            z-index: 2;
+        }
+
+        .bean:active {
+            transform: scale(1.1, 0.85);
+        }
+
+        /* 몸통 광택 효과 */
+        .bean::before {
+            content: '';
+            position: absolute;
+            top: 40px;
+            left: 35px;
+            width: 35px;
+            height: 60px;
+            background-color: var(--bean-highlight);
+            border-radius: 50%;
+            transform: rotate(25deg);
+        }
+
+        .face {
+            position: absolute;
+            bottom: 45px;
+            width: 140px;
+            height: 95px;
+            background-color: var(--bean-face);
+            border-radius: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        .eye-socket {
+            width: 22px;
+            height: 32px;
+            position: relative;
+        }
+
+        .eye {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: var(--bean-eye);
+            border-radius: 50%;
+            transition: transform 0.05s linear;
+        }
+
+        /* 눈동자 반짝임 */
+        .eye::after {
+            content: '';
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            width: 6px;
+            height: 9px;
+            background-color: white;
+            border-radius: 50%;
+        }
+
+        .shadow {
+            width: 130px;
+            height: 25px;
+            background: radial-gradient(circle, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0) 70%);
+            border-radius: 50%;
+            animation: shadow-scale 4s ease-in-out infinite;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- 캐릭터 -->
+        <div class="bean" id="character">
+            <div class="face">
+                <div class="eye-socket">
+                    <div class="eye" id="eye-l"></div>
+                </div>
+                <div class="eye-socket">
+                    <div class="eye" id="eye-r"></div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 그림자 -->
+        <div class="shadow"></div>
+    </div>
+
+    <script>
+        const eyes = document.querySelectorAll('.eye');
+        const character = document.getElementById('character');
+
+        // 마우스 이동 시 눈동자 추적 로직
+        document.addEventListener('mousemove', (e) => {
+            const mouseX = e.clientX;
+            const mouseY = e.clientY;
+
+            eyes.forEach(eye => {
+                const rect = eye.getBoundingClientRect();
+                const eyeX = rect.left + rect.width / 2;
+                const eyeY = rect.top + rect.height / 2;
+
+                const angle = Math.atan2(mouseY - eyeY, mouseX - eyeX);
+                const distance = 6; // 눈동자가 움직일 수 있는 최대 반경
+                
+                const moveX = Math.cos(angle) * distance;
+                const moveY = Math.sin(angle) * distance;
+
+                eye.style.transform = `translate(${moveX}px, ${moveY}px)`;
+            });
+        });
+
+        // 클릭 시 팅겨져 나가는 느낌의 피드백 (이미 CSS :active에 구현됨)
+    </script>
+</body>
+</html>

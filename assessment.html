@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+<meta name="theme-color" content="#7c3aed">
+<title>퍼플에그 6대 역량 진단 | 초등 학부모용</title>
+<meta name="description" content="초등 3~4학년 학부모를 위한 6대 미래 역량 진단. 60문항 · 역채점 포함 · 결과 즉시 확인.">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html{scroll-behavior:smooth}
+body{font-family:-apple-system,BlinkMacSystemFont,'Noto Sans KR','Malgun Gothic','맑은 고딕',sans-serif;color:#1f2937;background:#faf5ff;line-height:1.6;min-height:100vh}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer;border:none;background:none}
+:focus-visible{outline:3px solid #a78bfa;outline-offset:2px;border-radius:4px}
+.container{max-width:720px;margin:0 auto;padding:20px 16px}
+.screen{display:none;animation:fadeIn .35s ease}
+.screen.active{display:block}
+@keyframes fadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 28px;border-radius:99px;font-weight:700;font-size:15px;transition:.2s;text-align:center;min-height:48px;white-space:nowrap}
+.btn-primary{background:#7c3aed;color:#fff;box-shadow:0 6px 18px rgba(124,58,237,.3)}
+.btn-primary:hover:not(:disabled),.btn-primary:active{background:#6d28d9;transform:translateY(-1px)}
+.btn-primary.pending{background:#c4b5fd;box-shadow:none;color:#fff}
+.btn-outline{background:#fff;color:#7c3aed;border:2px solid #7c3aed}
+.btn-outline:hover{background:#f3f0ff}
+.btn-ghost{background:transparent;color:#6b7280;font-weight:600;font-size:14px;padding:10px 18px}
+.btn-ghost:hover{background:#f3f4f6;color:#111827}
+.brand{display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:10px}
+.brand-egg{width:44px;height:50px;background:linear-gradient(135deg,#a78bfa,#7c3aed);border-radius:50% 50% 50% 50% / 44% 44% 56% 56%;position:relative;box-shadow:0 6px 16px rgba(124,58,237,.3);flex-shrink:0}
+.brand-egg::before,.brand-egg::after{content:"";position:absolute;top:38%;width:5px;height:5px;background:#fff;border-radius:50%}
+.brand-egg::before{left:28%}.brand-egg::after{right:28%}
+.brand-text{font-weight:900;color:#7c3aed;font-size:20px;letter-spacing:-0.5px}
+.brand-sub{font-size:11px;color:#a78bfa;font-weight:700;letter-spacing:2px}
+.intro{text-align:center;padding:40px 20px 60px}
+.intro-label{display:inline-block;background:#f3f0ff;color:#7c3aed;padding:6px 16px;border-radius:99px;font-size:12px;font-weight:700;margin-bottom:14px;letter-spacing:0.5px}
+.intro-title{font-size:30px;font-weight:900;color:#111827;line-height:1.35;margin-bottom:16px;letter-spacing:-0.5px}
+.intro-title .hl{color:#7c3aed}
+.intro-desc{font-size:15px;color:#4b5563;line-height:1.8;margin-bottom:32px}
+.intro-meta{display:flex;justify-content:center;gap:24px;flex-wrap:wrap;margin-bottom:32px}
+.intro-meta-item{display:flex;align-items:center;gap:6px;font-size:14px;color:#6b7280}
+.intro-meta-item strong{color:#111827;font-weight:700}
+.comp-preview{background:#fff;border-radius:20px;padding:24px 20px;box-shadow:0 2px 14px rgba(0,0,0,.05);margin-bottom:28px;text-align:left}
+.comp-preview-title{font-size:13px;font-weight:700;color:#9ca3af;text-align:center;margin-bottom:14px;letter-spacing:1px}
+.comp-preview-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.comp-preview-item{display:flex;flex-direction:column;align-items:center;gap:6px;padding:10px 4px}
+.comp-preview-chip{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:900;font-size:12px;letter-spacing:-0.3px}
+.comp-preview-name{font-size:12px;color:#374151;font-weight:700;text-align:center}
+.intro-notice{background:#fffbeb;border:1px solid #fde68a;border-radius:14px;padding:14px 18px;margin-bottom:28px;font-size:13px;color:#92400e;line-height:1.7;text-align:left}
+.intro-notice strong{color:#78350f}
+.topbar{position:sticky;top:0;background:rgba(250,245,255,.95);backdrop-filter:blur(10px);border-bottom:1px solid rgba(199,183,255,.3);z-index:50;padding:12px 16px}
+.topbar-inner{max-width:720px;margin:0 auto;display:flex;align-items:center;gap:12px}
+.topbar-label{font-size:12px;color:#6b7280;font-weight:700;white-space:nowrap}
+.progress{flex:1;height:8px;background:#ede9fe;border-radius:99px;overflow:hidden}
+.progress-bar{height:100%;background:linear-gradient(90deg,#a78bfa,#7c3aed);border-radius:99px;width:0;transition:width .35s ease}
+.topbar-count{font-size:13px;font-weight:700;color:#7c3aed;white-space:nowrap;min-width:58px;text-align:right}
+.assessment-head{background:#fff;border-radius:18px;padding:18px 20px;margin-bottom:16px;box-shadow:0 2px 12px rgba(0,0,0,.04);font-size:14px;color:#4b5563;line-height:1.7}
+.assessment-head strong{color:#7c3aed}
+.question{background:#fff;border-radius:16px;padding:18px 20px;margin-bottom:10px;box-shadow:0 2px 10px rgba(0,0,0,.04);transition:.2s;scroll-margin-top:90px}
+.question.missing{border:2px solid #ef4444;background:#fef2f2}
+.question.answered{background:#fafafa}
+.q-text{font-size:15px;color:#1f2937;margin-bottom:12px;line-height:1.65;display:flex;gap:8px;align-items:flex-start}
+.q-num{color:#a78bfa;font-weight:700;flex-shrink:0;min-width:36px}
+.likert{display:grid;grid-template-columns:repeat(5,1fr);gap:6px}
+.likert-opt{position:relative}
+.likert-opt input{position:absolute;opacity:0;pointer-events:none}
+.likert-opt label{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:10px 4px;border:2px solid #e5e7eb;border-radius:12px;cursor:pointer;transition:.15s;background:#fff;min-height:68px;gap:4px;text-align:center}
+.likert-opt label:hover{border-color:#c4b5fd;background:#faf5ff}
+.likert-opt input:checked+label{border-color:#7c3aed;background:#7c3aed;color:#fff;box-shadow:0 6px 14px rgba(124,58,237,.25)}
+.likert-opt input:focus-visible+label{outline:3px solid #a78bfa;outline-offset:2px}
+.likert-num{font-size:16px;font-weight:900}
+.likert-label{font-size:10px;font-weight:600;line-height:1.2}
+.assessment-footer{display:flex;gap:10px;justify-content:center;padding:24px 0 40px;flex-wrap:wrap}
+.toast{position:fixed;top:70px;left:50%;transform:translateX(-50%) translateY(-16px);background:#ef4444;color:#fff;padding:12px 20px;border-radius:12px;font-size:14px;font-weight:700;box-shadow:0 8px 24px rgba(0,0,0,.2);opacity:0;pointer-events:none;transition:.3s;z-index:100;max-width:90%;text-align:center}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+.result-head{text-align:center;padding:32px 16px 12px}
+.result-head .result-label{display:inline-block;background:#f3f0ff;color:#7c3aed;padding:6px 16px;border-radius:99px;font-size:12px;font-weight:700;margin-bottom:12px}
+.result-head h2{font-size:26px;font-weight:900;color:#111827;margin-bottom:10px;line-height:1.35;letter-spacing:-0.5px}
+.result-head p{font-size:14px;color:#6b7280}
+.reliability-alert{background:#fef3c7;border:1px solid #fcd34d;border-radius:14px;padding:14px 18px;margin-bottom:18px;font-size:13px;color:#78350f;line-height:1.7}
+.reliability-alert strong{color:#78350f}
+.reliability-alert.ok{background:#d1fae5;border-color:#86efac;color:#065f46}
+.reliability-alert.ok strong{color:#065f46}
+.summary-card{background:#fff;border-radius:20px;padding:28px 20px;box-shadow:0 4px 24px rgba(0,0,0,.06);margin-bottom:18px;text-align:center}
+.summary-score{font-size:56px;font-weight:900;color:#7c3aed;line-height:1;margin-bottom:4px;letter-spacing:-2px}
+.summary-score small{font-size:20px;color:#a78bfa;font-weight:700}
+.summary-tier{font-size:14px;font-weight:700;color:#6d28d9;margin-bottom:8px}
+.summary-desc{font-size:13px;color:#6b7280;line-height:1.7}
+.chart-card{background:#fff;border-radius:20px;padding:24px 12px 16px;box-shadow:0 4px 24px rgba(0,0,0,.06);margin-bottom:18px}
+.chart-title{text-align:center;font-size:16px;font-weight:900;color:#111827;margin-bottom:6px}
+.chart-sub{text-align:center;font-size:12px;color:#9ca3af;margin-bottom:6px}
+.chart-wrap{width:100%;overflow:visible;display:flex;justify-content:center}
+.radar{width:100%;height:auto;max-width:420px;display:block}
+.comp-detail-list{display:flex;flex-direction:column;gap:12px;margin-bottom:18px}
+.comp-detail{background:#fff;border-radius:16px;padding:18px 18px 20px;box-shadow:0 2px 12px rgba(0,0,0,.05);border-left:5px solid transparent}
+.cd-top{display:flex;align-items:center;gap:12px;margin-bottom:10px}
+.cd-chip{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:900;font-size:12px;flex-shrink:0;letter-spacing:-0.3px}
+.cd-name-wrap{flex:1;min-width:0}
+.cd-dim{font-size:10px;color:#9ca3af;font-weight:700;letter-spacing:1px}
+.cd-name{font-size:15px;font-weight:900;color:#111827}
+.cd-score{font-size:22px;font-weight:900;color:#111827;line-height:1}
+.cd-score small{font-size:12px;color:#9ca3af;font-weight:700;margin-left:2px}
+.cd-bar-wrap{background:#f3f4f6;border-radius:99px;height:8px;margin-bottom:10px;overflow:hidden}
+.cd-bar{height:100%;border-radius:99px;transition:width .6s ease}
+.cd-tier{display:inline-block;padding:3px 10px;border-radius:99px;font-size:11px;font-weight:700;margin-bottom:8px}
+.cd-comment{font-size:13px;color:#4b5563;line-height:1.7}
+.cd-flag{display:inline-block;margin-left:6px;padding:2px 8px;background:#fef3c7;color:#92400e;border-radius:99px;font-size:10px;font-weight:700;vertical-align:middle}
+.tier-excellent{background:#dcfce7;color:#16a34a}
+.tier-stable{background:#dbeafe;color:#1d4ed8}
+.tier-growing{background:#fef9c3;color:#ca8a04}
+.tier-developing{background:#fee2e2;color:#dc2626}
+.focus-card{background:linear-gradient(135deg,#7c3aed,#6d28d9);color:#fff;border-radius:20px;padding:28px 22px;margin-bottom:18px;box-shadow:0 10px 30px rgba(124,58,237,.3)}
+.focus-card h3{font-size:18px;font-weight:900;margin-bottom:8px}
+.focus-card p{font-size:14px;color:#ddd6fe;margin-bottom:18px;line-height:1.7}
+.focus-items{display:flex;flex-direction:column;gap:10px}
+.focus-item{background:rgba(255,255,255,.12);border-radius:12px;padding:12px 14px;display:flex;align-items:center;gap:10px}
+.focus-item-chip{width:32px;height:32px;border-radius:50%;background:rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:900;flex-shrink:0}
+.focus-item-name{font-size:14px;font-weight:700;flex:1}
+.focus-item-score{font-size:13px;color:#ddd6fe;font-weight:700}
+.cta-card{background:#fff;border-radius:20px;padding:30px 22px;box-shadow:0 4px 24px rgba(0,0,0,.06);margin-bottom:18px;text-align:center}
+.cta-card .cta-emoji{font-size:40px;margin-bottom:10px}
+.cta-card h3{font-size:20px;font-weight:900;color:#111827;margin-bottom:8px;line-height:1.4}
+.cta-card p{font-size:13px;color:#6b7280;line-height:1.7;margin-bottom:20px}
+.cta-card .btn{width:100%;max-width:320px}
+.cta-note{font-size:12px;color:#9ca3af;margin-top:12px}
+.result-actions{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;padding:12px 0 40px}
+@media(max-width:420px){
+  .intro-title{font-size:26px}
+  .comp-preview-grid{grid-template-columns:repeat(2,1fr)}
+  .likert-opt label{min-height:60px;padding:8px 2px}
+  .likert-num{font-size:14px}
+  .likert-label{font-size:9px}
+  .summary-score{font-size:48px}
+}
+@media print{
+  body{background:#fff}
+  .topbar,.assessment-footer,.result-actions,.cta-card .btn,.btn,.toast{display:none!important}
+  .screen{display:block!important}
+  #screen-intro,#screen-assessment{display:none!important}
+}
+</style>
+</head>
+<body>
+
+<div id="screen-intro" class="screen active" role="region" aria-label="진단 소개">
+  <div class="container intro">
+    <a href="index.html" aria-label="퍼플에그 홈으로 이동" style="display:inline-flex;align-items:center;text-decoration:none;margin-bottom:10px">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 210 64" aria-hidden="true" focusable="false" style="height:44px;width:auto;display:block">
+        <polygon points="182,8 184.2,14 190.5,14 185.4,18 187.4,24 182,20.2 176.6,24 178.6,18 173.5,14 179.8,14" fill="#fbbf24"/>
+        <ellipse cx="24" cy="34" rx="20" ry="24" fill="#7c3aed"/>
+        <ellipse cx="24" cy="38" rx="12" ry="11" fill="#ffffff"/>
+        <circle cx="19" cy="36" r="2" fill="#1f2937"/>
+        <circle cx="29" cy="36" r="2" fill="#1f2937"/>
+        <path d="M21 42 Q24 45 27 42" stroke="#1f2937" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+        <text x="55" y="36" font-family="'Noto Sans KR','Malgun Gothic',sans-serif" font-size="22" font-weight="900" fill="#7c3aed" letter-spacing="-0.5">퍼플에그</text>
+        <text x="55" y="54" font-family="'Noto Sans KR','Malgun Gothic',sans-serif" font-size="11" font-weight="700" fill="#a78bfa" letter-spacing="0.5">미래창의교육</text>
+      </svg>
+    </a>
+    <div class="intro-label">초등 3~4학년 학부모용 · 6대 역량 진단</div>
+    <h1 class="intro-title">우리 아이의 <span class="hl">미래 역량</span><br>어디까지 자라있을까요?</h1>
+    <p class="intro-desc">
+      초등 3~4학년 자녀의 일상 모습을 떠올리며<br>
+      60문항에 차분히 답해 주세요. 바로 결과를 확인할 수 있어요.
+    </p>
+    <div class="intro-meta">
+      <div class="intro-meta-item">📝 <strong>60문항</strong></div>
+      <div class="intro-meta-item">⏰ <strong>10~15분</strong></div>
+      <div class="intro-meta-item">📊 <strong>즉시 결과</strong></div>
+    </div>
+    <div class="comp-preview">
+      <div class="comp-preview-title">진단하는 6대 역량</div>
+      <div class="comp-preview-grid" id="comp-preview-grid"></div>
+    </div>
+    <div class="intro-notice">
+      <strong>안내 ·</strong> 학부모가 자녀의 평소 모습을 <strong>관찰자 시점으로 응답</strong>하는 진단입니다.
+      일부 문항은 <strong>반대 방향(역채점)</strong>으로 표현되어 있으니 한 문항씩 차분히 읽어 주세요.
+      응답은 외부에 저장되지 않고 페이지를 떠나면 사라집니다.
+    </div>
+    <button class="btn btn-primary" onclick="startAssessment()" style="font-size:16px;padding:16px 36px">진단 시작하기 →</button>
+  </div>
+</div>
+
+<div id="screen-assessment" class="screen" role="region" aria-label="역량 진단 설문">
+  <div class="topbar">
+    <div class="topbar-inner">
+      <span class="topbar-label">진행</span>
+      <div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="60" aria-valuenow="0" id="progress-bar-aria">
+        <div class="progress-bar" id="progress-bar"></div>
+      </div>
+      <span class="topbar-count" id="progress-count">0 / 60</span>
+    </div>
+  </div>
+  <div class="container" style="padding-top:16px">
+    <div class="assessment-head">
+      각 문항에 대해 <strong>우리 아이의 평소 모습</strong>과 얼마나 일치하는지 골라주세요.
+      문항은 <strong>순서와 상관없이 섞여 있으며</strong>, 일부는 반대로 표현된 문항(예: "자주 ~하지 못한다")이 포함되어 있어요.
+    </div>
+    <div id="assessment-form">
+      <div id="questions-container"></div>
+      <div class="assessment-footer">
+        <button type="button" class="btn btn-ghost" onclick="backToIntro()">← 처음으로</button>
+        <button type="button" class="btn btn-primary pending" id="submit-btn" onclick="submitAssessment()">결과 보기 →</button>
+      </div>
+    </div>
+  </div>
+  <div class="toast" id="toast" role="alert" aria-live="polite"></div>
+</div>
+
+<div id="screen-result" class="screen" role="region" aria-label="진단 결과">
+  <div class="container">
+    <div class="result-head">
+      <div class="result-label">진단 결과</div>
+      <h2 id="result-title">우리 아이의 6대 역량 프로필</h2>
+      <p id="result-date"></p>
+    </div>
+    <div id="reliability-alert"></div>
+    <div class="summary-card">
+      <div class="summary-score"><span id="summary-score">-</span><small> / 5.0</small></div>
+      <div class="summary-tier" id="summary-tier">-</div>
+      <div class="summary-desc" id="summary-desc">-</div>
+    </div>
+    <div class="chart-card">
+      <div class="chart-title">역량 프로필 차트</div>
+      <div class="chart-sub">6대 역량 균형을 한눈에</div>
+      <div class="chart-wrap">
+        <svg class="radar" id="radar-svg" viewBox="0 0 420 400" aria-label="6대 역량 레이더 차트"></svg>
+      </div>
+    </div>
+    <div class="comp-detail-list" id="comp-detail-list"></div>
+    <div class="focus-card" id="focus-card">
+      <h3>🎯 지금 함께 키워가면 좋은 역량</h3>
+      <p>이번 진단에서 상대적으로 낮게 나온 역량이에요. 약점이 아니라 <strong>앞으로 더 자랄 수 있는 성장 포인트</strong>로 바라봐 주세요.</p>
+      <div class="focus-items" id="focus-items"></div>
+    </div>
+    <div class="cta-card">
+      <div class="cta-emoji">🥚</div>
+      <h3>결과에 대해 더 자세히<br>상담받아 보시겠어요?</h3>
+      <p>
+        퍼플에그 선생님이 결과를 함께 살펴보며,<br>
+        아이에게 맞는 프로그램 방향을 안내해 드려요.<br>
+        <strong style="color:#7c3aed">무료 상담</strong>이니 편하게 신청해 주세요.
+      </p>
+      <a class="btn btn-primary" href="index.html#/consultation">무료 상담 신청하기 →</a>
+      <div class="cta-note">결과는 이 페이지에서만 보관됩니다 · 공유하려면 아래 인쇄 버튼을 이용해 주세요</div>
+    </div>
+    <div class="result-actions">
+      <button class="btn btn-outline" onclick="window.print()">🖨️ 결과 인쇄 / PDF 저장</button>
+      <button class="btn btn-ghost" onclick="restart()">↺ 다시 진단하기</button>
+    </div>
+  </div>
+</div>
+
+<script>
+const COMPETENCIES = [
+  { code:'CO', name:'소통과 협업', dim:'대인관계', color:'#7c3aed', desc:'동료와 함께 문제를 풀며 리더십과 공감 능력을 배양', strengthMsg:'다른 사람과 함께 해내는 힘이 탄탄해요. 모둠 과제나 협업 상황에서 빛을 발할 역량입니다.', growMsg:'혼자보다 함께할 때 더 크는 아이예요. 짝/모둠 활동에서 역할을 조금씩 맡겨보면 자신감이 붙습니다.' },
+  { code:'RE', name:'회복 탄력성', dim:'개인 내적', color:'#a78bfa', desc:'실패를 당연한 과정으로 받아들이는 단단한 마음', strengthMsg:'넘어져도 털고 일어서는 마음 근육이 좋아요. 도전이 필요한 학습에서 큰 자산이 됩니다.', growMsg:'실수 앞에서 마음이 쉽게 흔들릴 수 있어요. 결과보다 과정을 칭찬해 주면 회복력이 조금씩 단단해집니다.' },
+  { code:'SL', name:'자기 주도력', dim:'개인 내적', color:'#10b981', desc:'자신이 배울 것을 직접 정하고 실행하는 독립적인 태도', strengthMsg:'배울 것을 스스로 정하고 움직이는 힘이 있어요. 관심 주제를 깊이 파고드는 프로젝트에 잘 맞습니다.', growMsg:'시작이 어렵거나 계획보다 즉흥적인 편일 수 있어요. 작은 단위의 목표-점검 루틴을 함께 만들면 도움이 됩니다.' },
+  { code:'CT', name:'비판적 사고', dim:'인지·표현', color:'#312e81', desc:'정보를 분석하고 판단하는 논리적 사고 능력 향상', strengthMsg:'"왜?"라고 묻고 근거를 따져보는 눈이 열려 있어요. AI 시대 가장 강력한 무기 중 하나입니다.', growMsg:'받아들이는 정보를 한 번 더 의심해 보는 힘을 기르면 좋아요. 뉴스 분석·토론 활동을 권장합니다.' },
+  { code:'SE', name:'사회적 감수성', dim:'대인관계', color:'#6d28d9', desc:'공동체의 문제에 공감하고 실천으로 옮기는 시민의식', strengthMsg:'주변과 사회의 문제에 마음을 두는 아이예요. 시민의식의 싹이 이미 자라고 있습니다.', growMsg:'관심을 더 넓힐 여지가 있어요. 지역/세계 이슈를 아이 눈높이로 함께 이야기 나누는 것이 좋은 시작입니다.' },
+  { code:'CR', name:'창의적 표현력', dim:'인지·표현', color:'#f59e0b', desc:'다양한 도구와 매체를 활용해 자신만의 방식으로 표현', strengthMsg:'자기 아이디어를 다양한 방식으로 꺼내 놓는 창작자 기질이 있어요. 창작 결과물이 자존감으로 이어집니다.', growMsg:'표현의 자유를 더 허용받을수록 자라는 역량이에요. "틀린 표현은 없다"는 안전한 창작 환경이 중요합니다.' }
+];
+
+const QUESTIONS = {
+  CO: [
+    {t:'친구와 의견이 다를 때 자기 생각을 차분히 말로 설명한다'},
+    {t:'모둠 활동에서 친구들과 역할을 나눠 함께 결과를 만들어낸다'},
+    {t:'친구의 표정이나 감정 변화를 살피며 대화를 이어간다'},
+    {t:'갈등이 생겼을 때 화를 내기보다 먼저 말로 풀려고 시도한다'},
+    {t:'필요할 때 부모나 선생님, 친구에게 도움을 잘 요청한다'},
+    {t:'혼자 해결하려고 고집하고 친구의 도움을 잘 받아들이지 않는다', r:true},
+    {t:'자기와 다른 의견도 일단 끝까지 들어보려 한다'},
+    {t:'함께하는 활동에서 약속한 역할을 끝까지 지킨다'},
+    {t:'함께 결정할 일이 생기면 자기 뜻대로만 하려 한다', r:true},
+    {t:'상대의 말을 중간에 끊고 자기 얘기부터 꺼내는 편이다', r:true}
+  ],
+  RE: [
+    {t:'실수하거나 실패했을 때 크게 좌절하지 않고 다시 시도한다'},
+    {t:'어려운 과제를 만나도 금방 포기하지 않고 끝까지 해본다'},
+    {t:'속상하거나 화가 나는 감정을 스스로 추스르는 방법이 있다'},
+    {t:'친구와 다툰 다음 날에도 다시 잘 어울릴 수 있다'},
+    {t:'뜻대로 되지 않는 상황에서도 감정을 조절하며 대처한다'},
+    {t:'작은 실수에도 오래 속상해하거나 의욕을 잃는 편이다', r:true},
+    {t:'새로운 환경(반 바뀜, 전학, 새 학원 등)에 잘 적응하는 편이다'},
+    {t:'자기 생각과 다른 평가를 받으면 쉽게 흔들린다', r:true},
+    {t:'속상했다가도 시간이 지나면 스스로 기분을 바꿀 줄 안다'},
+    {t:'한 번 실패하면 비슷한 시도를 한동안 꺼리는 편이다', r:true}
+  ],
+  SL: [
+    {t:'누가 시키지 않아도 해야 할 일을 스스로 챙겨서 한다'},
+    {t:'관심 있는 주제가 생기면 스스로 자료를 찾아보며 탐구한다'},
+    {t:'자기 하루 일과(공부/놀이/정리)를 스스로 관리하려 한다'},
+    {t:'배우고 싶은 것, 하고 싶은 것을 스스로 말할 수 있다'},
+    {t:'숙제나 과제를 부모의 개입 없이 마무리하는 편이다'},
+    {t:'부모가 시키지 않으면 학습이나 정리를 시작하지 않는다', r:true},
+    {t:'자신의 목표를 세우고 이룬 정도를 확인하려 한다'},
+    {t:'무엇을 할지 스스로 고르기 어려워하고 선택을 미룬다', r:true},
+    {t:'결과보다 자신이 직접 해보는 과정을 중요하게 여긴다'},
+    {t:'어떤 일이든 시작할 때 도움을 받아야 비로소 움직인다', r:true}
+  ],
+  CT: [
+    {t:'들은 정보에 대해 "정말 그럴까?"라고 되묻는 편이다'},
+    {t:'어떤 주장을 접했을 때 이유나 근거를 궁금해한다'},
+    {t:'자기 생각의 이유를 논리적으로 설명할 수 있다'},
+    {t:'여러 정보나 의견을 비교해서 판단하려고 한다'},
+    {t:'결정을 내리기 전에 다른 선택지도 생각해 본다'},
+    {t:'어른이나 책이 말하는 것은 대부분 그대로 믿는 편이다', r:true},
+    {t:'자기와 반대되는 의견을 만나면 그 이유를 궁금해한다'},
+    {t:'문제가 생겼을 때 원인을 찬찬히 살펴본다'},
+    {t:'"모두가 그렇게 한다"는 이유로 쉽게 따라하는 편이다', r:true},
+    {t:'같은 이야기를 들어도 의문이 들지 않고 대체로 받아들인다', r:true}
+  ],
+  SE: [
+    {t:'가족이나 친구의 기분 변화를 잘 알아챈다'},
+    {t:'불공평하거나 부당한 상황을 보면 문제의식을 느낀다'},
+    {t:'다른 사람의 입장에서 상황을 바라보려 한다'},
+    {t:'힘들어하는 친구나 주변 사람에게 관심을 갖는다'},
+    {t:'사회·환경 뉴스나 이슈에 호기심을 보이고 질문한다'},
+    {t:'자기 일이 아니면 주변의 어려움에 별 관심이 없다', r:true},
+    {t:'소외되거나 혼자 있는 친구에게 눈길이 가는 편이다'},
+    {t:'누군가 슬퍼하거나 힘들어할 때 어떻게 반응해야 할지 모른다', r:true},
+    {t:'작은 친절(양보·배려·인사)을 자발적으로 실천한다'},
+    {t:'남의 감정보다 자기 기분이 먼저라서 잘 살피지 못한다', r:true}
+  ],
+  CR: [
+    {t:'자기 생각이나 감정을 그림·글·말·만들기 등 다양한 방식으로 표현한다'},
+    {t:'익숙한 물건이나 규칙을 새로운 방식으로 바꿔본 적이 있다'},
+    {t:'호기심이 많고 "왜?", "만약에~?" 같은 질문을 자주 한다'},
+    {t:'만드는 과정 자체를 즐기며 결과에만 매달리지 않는다'},
+    {t:'정해진 틀을 벗어난 독특한 아이디어를 잘 낸다'},
+    {t:'주어진 예시나 틀 안에서만 작업하는 것을 편해한다', r:true},
+    {t:'자기만의 방식으로 문제를 해결해 보려 한다'},
+    {t:'색·소리·움직임 등 감각적 자극에 풍부하게 반응한다'},
+    {t:'정답이 정해져 있는 과제를 훨씬 편하게 느낀다', r:true},
+    {t:'새로운 아이디어를 낼 때보다 이미 있는 답을 고르는 것을 선호한다', r:true}
+  ]
+};
+
+const LIKERT = [
+  {val:1, label:'전혀<br>아니다'},
+  {val:2, label:'아니다'},
+  {val:3, label:'보통'},
+  {val:4, label:'그렇다'},
+  {val:5, label:'매우<br>그렇다'}
+];
+
+let answers = {};
+let shuffledItems = [];
+const ITEMS_PER_COMP = 10;
+const TOTAL = COMPETENCIES.length * ITEMS_PER_COMP;
+
+function escapeHtml(s){
+  return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+}
+
+function shuffle(arr){
+  const a = arr.slice();
+  for (let i=a.length-1;i>0;i--){
+    const j = Math.floor(Math.random()*(i+1));
+    [a[i],a[j]] = [a[j],a[i]];
+  }
+  return a;
+}
+
+function buildShuffledItems(){
+  const flat = [];
+  for (const c of COMPETENCIES){
+    QUESTIONS[c.code].forEach((q, i) => {
+      flat.push({ code:c.code, idx:i, text:q.t, reverse: !!q.r });
+    });
+  }
+  return shuffle(flat);
+}
+
+function renderIntroPreview(){
+  const grid = document.getElementById('comp-preview-grid');
+  grid.innerHTML = COMPETENCIES.map(c => `
+    <div class="comp-preview-item">
+      <div class="comp-preview-chip" style="background:${c.color}">${c.code}</div>
+      <div class="comp-preview-name">${c.name}</div>
+    </div>
+  `).join('');
+}
+
+function renderAssessment(){
+  const container = document.getElementById('questions-container');
+  container.innerHTML = shuffledItems.map((item, idx) => {
+    const name = `${item.code}_${item.idx}`;
+    const qNum = idx + 1;
+    const radios = LIKERT.map(l => `
+      <div class="likert-opt">
+        <input type="radio" name="${name}" id="${name}_${l.val}" value="${l.val}" onchange="onAnswer('${name}', ${l.val})">
+        <label for="${name}_${l.val}">
+          <span class="likert-num">${l.val}</span>
+          <span class="likert-label">${l.label}</span>
+        </label>
+      </div>
+    `).join('');
+    return `
+      <div class="question" data-name="${name}" id="q_${name}">
+        <div class="q-text"><span class="q-num">Q${qNum}.</span><span>${escapeHtml(item.text)}</span></div>
+        <div class="likert" role="radiogroup" aria-label="${escapeHtml(item.text)}">${radios}</div>
+      </div>
+    `;
+  }).join('');
+}
+
+function onAnswer(name, val){
+  answers[name] = val;
+  const q = document.getElementById('q_' + name);
+  if (q){
+    q.classList.add('answered');
+    q.classList.remove('missing');
+  }
+  updateProgress();
+}
+
+function updateProgress(){
+  // DOM에서 직접 체크된 라디오 개수를 세어 더 신뢰성 있게 진행률 계산
+  const domChecked = document.querySelectorAll('#questions-container input[type="radio"]:checked').length;
+  const stateChecked = Object.keys(answers).length;
+  const answered = Math.max(domChecked, stateChecked);
+  const pct = (answered / TOTAL) * 100;
+  document.getElementById('progress-bar').style.width = pct + '%';
+  document.getElementById('progress-count').textContent = answered + ' / ' + TOTAL;
+  document.getElementById('progress-bar-aria').setAttribute('aria-valuenow', answered);
+  const btn = document.getElementById('submit-btn');
+  if (answered >= TOTAL) btn.classList.remove('pending');
+  else btn.classList.add('pending');
+}
+
+function showToast(msg){
+  const el = document.getElementById('toast');
+  el.textContent = msg;
+  el.classList.add('show');
+  clearTimeout(showToast._t);
+  showToast._t = setTimeout(() => el.classList.remove('show'), 2600);
+}
+
+function showScreen(id){
+  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  window.scrollTo({top:0});
+}
+
+function startAssessment(){
+  answers = {};
+  shuffledItems = buildShuffledItems();
+  renderAssessment();
+  updateProgress();
+  showScreen('screen-assessment');
+}
+
+function backToIntro(){
+  if (Object.keys(answers).length > 0){
+    if (!confirm('진단을 중단하시겠어요? 응답 내용이 사라집니다.')) return;
+  }
+  answers = {};
+  showScreen('screen-intro');
+}
+
+function restart(){
+  answers = {};
+  showScreen('screen-intro');
+}
+
+function submitAssessment(){
+  try {
+    // 방어적 수집: 일부 환경에서 radio onchange가 안 먹었을 경우 DOM에서 직접 긁어옴
+    for (const c of COMPETENCIES){
+      for (let i=0;i<ITEMS_PER_COMP;i++){
+        const name = c.code + '_' + i;
+        if (answers[name] == null){
+          const checked = document.querySelector('input[name="' + name + '"]:checked');
+          if (checked) answers[name] = parseInt(checked.value, 10);
+        }
+      }
+    }
+    const missing = [];
+    for (const c of COMPETENCIES){
+      for (let i=0;i<ITEMS_PER_COMP;i++){
+        const name = c.code + '_' + i;
+        if (answers[name] == null) missing.push(name);
+      }
+    }
+    if (missing.length > 0){
+      document.querySelectorAll('.question.missing').forEach(el => el.classList.remove('missing'));
+      missing.forEach(n => {
+        const el = document.getElementById('q_' + n);
+        if (el) el.classList.add('missing');
+      });
+      const first = document.getElementById('q_' + missing[0]);
+      if (first) {
+        try { first.scrollIntoView({behavior:'smooth', block:'center'}); }
+        catch(e){ first.scrollIntoView(true); }
+      }
+      showToast('아직 ' + missing.length + '개 문항이 비어 있어요');
+      alert('아직 ' + missing.length + '개 문항이 비어 있어요.\n빨간 테두리로 표시된 문항을 확인해 주세요.');
+      return;
+    }
+    renderResult();
+    showScreen('screen-result');
+  } catch (err) {
+    console.error('submitAssessment error:', err);
+    alert('결과 계산 중 오류가 발생했어요.\n\n' + (err && err.message ? err.message : err) + '\n\n화면을 새로고침한 뒤 다시 시도해 주세요.');
+  }
+}
+
+function computeScores(){
+  const results = [];
+  const reliability = [];
+  for (const c of COMPETENCIES){
+    let fSum=0, fCnt=0, rSum=0, rCnt=0;
+    for (let i=0;i<ITEMS_PER_COMP;i++){
+      const name = `${c.code}_${i}`;
+      const raw = answers[name];
+      const item = QUESTIONS[c.code][i];
+      const scored = item.r ? (6 - raw) : raw;
+      if (item.r){ rSum += scored; rCnt++; }
+      else       { fSum += scored; fCnt++; }
+    }
+    const fMean = fSum / fCnt;
+    const rMean = rSum / rCnt;
+    const total = (fSum + rSum) / (fCnt + rCnt);
+    const discrepancy = Math.abs(fMean - rMean);
+    results.push({
+      ...c,
+      score: Math.round(total*10)/10,
+      fMean: Math.round(fMean*10)/10,
+      rMean: Math.round(rMean*10)/10,
+      discrepancy: Math.round(discrepancy*10)/10,
+      inconsistent: discrepancy >= 1.5
+    });
+    reliability.push(discrepancy);
+  }
+  const avgDisc = reliability.reduce((s,x)=>s+x,0) / reliability.length;
+  const flaggedCount = results.filter(r => r.inconsistent).length;
+  return {
+    comps: results,
+    avgDiscrepancy: Math.round(avgDisc*100)/100,
+    flaggedCount
+  };
+}
+
+function tierInfo(score){
+  if (score >= 4.3) return {key:'excellent', label:'우수 · 강점 영역', cls:'tier-excellent', emoji:'🌟'};
+  if (score >= 3.6) return {key:'stable',    label:'안정적 성장',     cls:'tier-stable',    emoji:'🌱'};
+  if (score >= 2.7) return {key:'growing',   label:'성장 중',         cls:'tier-growing',   emoji:'🌾'};
+  return                   {key:'developing',label:'발달 중',         cls:'tier-developing',emoji:'🔎'};
+}
+
+function renderResult(){
+  const {comps, avgDiscrepancy, flaggedCount} = computeScores();
+  const overall = Math.round(comps.reduce((s,x)=>s+x.score, 0) / comps.length * 10) / 10;
+  const overallTier = tierInfo(overall);
+
+  const now = new Date();
+  document.getElementById('result-date').textContent =
+    `${now.getFullYear()}년 ${now.getMonth()+1}월 ${now.getDate()}일 진단 · 60문항 응답`;
+
+  const alertEl = document.getElementById('reliability-alert');
+  if (flaggedCount >= 3 || avgDiscrepancy >= 1.3){
+    alertEl.innerHTML = `
+      <div class="reliability-alert">
+        <strong>⚠️ 응답 일관성 점검</strong> — 일부 문항이 반대 방향(역채점)으로 표현되어 있었는데,
+        정채점 문항과 응답 방향이 크게 달랐던 역량이 <strong>${flaggedCount}개</strong> 있습니다.
+        서둘러 답했거나 문항을 반대로 읽었을 수 있어요. 결과는 참고용으로만 해석해 주시고,
+        필요하면 시간을 두고 다시 한 번 진단해 보세요.
+      </div>`;
+  } else {
+    alertEl.innerHTML = `
+      <div class="reliability-alert ok">
+        <strong>✓ 응답 일관성 양호</strong> — 정채점 문항과 역채점 문항의 응답 방향이 일치합니다.
+        진단 결과를 신뢰하고 해석하셔도 좋습니다.
+      </div>`;
+  }
+
+  document.getElementById('summary-score').textContent = overall.toFixed(1);
+  document.getElementById('summary-tier').textContent = `종합: ${overallTier.label} ${overallTier.emoji}`;
+  const overallDesc = {
+    excellent:'6대 역량 전반이 탄탄하게 자라 있어요. 지금의 강점을 더 깊이 있는 프로젝트로 이어가면 좋습니다.',
+    stable:   '전반적으로 안정적으로 자라고 있어요. 특정 역량을 조금 더 확장해 주면 균형 잡힌 성장이 가능합니다.',
+    growing:  '6대 역량이 막 자라는 시기예요. 프로젝트 기반 경험이 쌓이면 빠르게 탄력이 붙습니다.',
+    developing:'지금은 씨앗을 품은 단계예요. 작은 성공 경험을 반복할 수 있는 환경이 가장 중요합니다.'
+  };
+  document.getElementById('summary-desc').textContent = overallDesc[overallTier.key];
+
+  drawRadar(comps);
+  renderDetailCards(comps);
+  renderFocus(comps);
+}
+
+function drawRadar(scored){
+  const svg = document.getElementById('radar-svg');
+  const cx = 210, cy = 200, R = 130;
+  const N = scored.length;
+  function pt(i, r){
+    const ang = (Math.PI*2 * i / N) - Math.PI/2;
+    return [cx + r*Math.cos(ang), cy + r*Math.sin(ang)];
+  }
+  let c = '';
+  for (let lvl=1; lvl<=5; lvl++){
+    const r = R * (lvl/5);
+    const pts = Array.from({length:N}, (_,i) => pt(i, r).map(v=>v.toFixed(1)).join(',')).join(' ');
+    c += `<polygon points="${pts}" fill="${lvl===5?'rgba(243,240,255,.6)':'none'}" stroke="#e5e7eb" stroke-width="1"/>`;
+  }
+  for (let i=0;i<N;i++){
+    const [x,y] = pt(i, R);
+    c += `<line x1="${cx}" y1="${cy}" x2="${x.toFixed(1)}" y2="${y.toFixed(1)}" stroke="#e5e7eb" stroke-width="1"/>`;
+  }
+  for (let lvl=1; lvl<=5; lvl++){
+    const r = R * (lvl/5);
+    c += `<text x="${cx+3}" y="${cy-r+3}" fill="#c4b5fd" font-size="9" font-weight="700">${lvl}</text>`;
+  }
+  const dataPts = scored.map((x,i) => pt(i, R * (x.score/5)).map(v=>v.toFixed(1)).join(',')).join(' ');
+  c += `<polygon points="${dataPts}" fill="rgba(124,58,237,0.25)" stroke="#7c3aed" stroke-width="2.5" stroke-linejoin="round"/>`;
+  scored.forEach((x,i) => {
+    const [px,py] = pt(i, R * (x.score/5));
+    c += `<circle cx="${px.toFixed(1)}" cy="${py.toFixed(1)}" r="5" fill="${x.color}" stroke="#fff" stroke-width="2"/>`;
+  });
+  scored.forEach((x,i) => {
+    const [lx,ly] = pt(i, R + 28);
+    c += `<circle cx="${lx.toFixed(1)}" cy="${ly.toFixed(1)}" r="14" fill="${x.color}"/>`;
+    c += `<text x="${lx.toFixed(1)}" y="${(ly+4).toFixed(1)}" text-anchor="middle" fill="#fff" font-size="11" font-weight="900">${x.code}</text>`;
+    const ny = ly + 28;
+    c += `<text x="${lx.toFixed(1)}" y="${ny.toFixed(1)}" text-anchor="middle" fill="#374151" font-size="12" font-weight="700">${x.name}</text>`;
+    c += `<text x="${lx.toFixed(1)}" y="${(ny+14).toFixed(1)}" text-anchor="middle" fill="${x.color}" font-size="11" font-weight="900">${x.score.toFixed(1)}</text>`;
+  });
+  svg.innerHTML = c;
+}
+
+function renderDetailCards(scored){
+  const list = document.getElementById('comp-detail-list');
+  list.innerHTML = scored.map(c => {
+    const tier = tierInfo(c.score);
+    const pct = (c.score / 5 * 100).toFixed(0);
+    const msg = (c.score >= 3.6) ? c.strengthMsg : c.growMsg;
+    const flag = c.inconsistent
+      ? `<span class="cd-flag" title="정채점/역채점 응답 편차 ${c.discrepancy.toFixed(1)}">⚠️ 응답 편차 큼</span>`
+      : '';
+    return `
+      <div class="comp-detail" style="border-left-color:${c.color}">
+        <div class="cd-top">
+          <div class="cd-chip" style="background:${c.color}">${c.code}</div>
+          <div class="cd-name-wrap">
+            <div class="cd-dim">${c.dim}</div>
+            <div class="cd-name">${c.name}</div>
+          </div>
+          <div class="cd-score">${c.score.toFixed(1)}<small>/5.0</small></div>
+        </div>
+        <div class="cd-bar-wrap">
+          <div class="cd-bar" style="width:${pct}%;background:${c.color}"></div>
+        </div>
+        <span class="cd-tier ${tier.cls}">${tier.emoji} ${tier.label}</span>${flag}
+        <p class="cd-comment">${msg}</p>
+      </div>
+    `;
+  }).join('');
+}
+
+function renderFocus(scored){
+  const sorted = [...scored].sort((a,b) => a.score - b.score);
+  const low2 = sorted.slice(0, 2);
+  const wrap = document.getElementById('focus-items');
+  wrap.innerHTML = low2.map(c => `
+    <div class="focus-item">
+      <div class="focus-item-chip">${c.code}</div>
+      <div class="focus-item-name">${c.name} <span style="opacity:.8;font-weight:400">· ${c.dim}</span></div>
+      <div class="focus-item-score">${c.score.toFixed(1)}</div>
+    </div>
+  `).join('');
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  renderIntroPreview();
+  // 제출 버튼: inline onclick이 안 먹는 환경(일부 카톡 내장 뷰어 등)을 위한 백업 핸들러
+  var submitBtn = document.getElementById('submit-btn');
+  if (submitBtn){
+    submitBtn.addEventListener('click', function(e){
+      e.preventDefault();
+      submitAssessment();
+    });
+  }
+});
+</script>
+</body>
+</html>

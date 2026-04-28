@@ -123,7 +123,7 @@ nav.scrolled{box-shadow:0 2px 20px rgba(0,0,0,.08)}
 .section-purple{background:#f3f0ff}
 .container{max-width:1100px;margin:0 auto;padding:0 20px}
 .section-head{text-align:center;margin-bottom:56px}
-.section-label{display:inline-block;background:#f3f0ff;color:#7c3aed;padding:6px 14px;border-radius:99px;font-size:13px;font-weight:700;margin-bottom:14px}
+.section-label{display:inline-block;background:#f3f0ff;color:#7c3aed;padding:6px 14px;border-radius:99px;font-size:26px;font-weight:500;margin-bottom:14px;font-family:'Noto Sans KR',sans-serif;letter-spacing:0.3px}
 .section-title{font-size:36px;font-weight:900;color:#111827;line-height:1.3}
 .section-sub{font-size:16px;color:#9ca3af;margin-top:12px}
 
@@ -378,13 +378,29 @@ footer{background:#111827;color:#9ca3af;padding:60px 0 30px}
 <nav id="nav" aria-label="주 메뉴">
   <div class="nav-inner">
     <button class="logo" onclick="goPage('home')" aria-label="홈으로 이동">
-      <!-- 실제 운영 시 logo.png 파일을 영문 파일명으로 교체하세요 -->
-      <img src="logo.png" alt="퍼플에그 미래창의교육" style="height:44px;width:auto;display:block" onerror="this.style.display='none'">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 210 64" aria-hidden="true" focusable="false" style="height:44px;width:auto;display:block">
+  <!-- 별 -->
+  <polygon points="182,8 184.2,14 190.5,14 185.4,18 187.4,24 182,20.2 176.6,24 178.6,18 173.5,14 179.8,14" fill="#fbbf24"/>
+  <!-- 알 모양 마스코트 -->
+  <ellipse cx="24" cy="34" rx="20" ry="24" fill="#7c3aed"/>
+  <!-- 얼굴 흰 부분 -->
+  <ellipse cx="24" cy="38" rx="12" ry="11" fill="#ffffff"/>
+  <!-- 눈 -->
+  <circle cx="19" cy="36" r="2" fill="#1f2937"/>
+  <circle cx="29" cy="36" r="2" fill="#1f2937"/>
+  <!-- 작은 입 -->
+  <path d="M21 42 Q24 45 27 42" stroke="#1f2937" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+  <!-- 퍼플에그 텍스트 -->
+  <text x="55" y="36" font-family="'Noto Sans KR','Malgun Gothic',sans-serif" font-size="22" font-weight="900" fill="#7c3aed" letter-spacing="-0.5">퍼플에그</text>
+  <!-- 미래창의교육 서브 텍스트 -->
+  <text x="55" y="54" font-family="'Noto Sans KR','Malgun Gothic',sans-serif" font-size="11" font-weight="700" fill="#a78bfa" letter-spacing="0.5">미래창의교육</text>
+</svg>
     </button>
     <div class="nav-links">
       <a href="#/home" id="nav-home" class="active">홈</a>
       <a href="#/programs" id="nav-programs">프로그램</a>
       <a href="#/philosophy" id="nav-philosophy">교육 철학</a>
+      <a href="assessment.html" id="nav-assessment">🔍 역량 진단</a>
       <a href="#/consultation" id="nav-consultation">상담 신청</a>
       <a href="#/consultation" class="nav-cta">무료 상담 신청</a>
     </div>
@@ -397,6 +413,7 @@ footer{background:#111827;color:#9ca3af;padding:60px 0 30px}
   <a href="#/home" id="mob-home" class="active" role="menuitem">홈</a>
   <a href="#/programs" id="mob-programs" role="menuitem">프로그램</a>
   <a href="#/philosophy" id="mob-philosophy" role="menuitem">교육 철학</a>
+  <a href="assessment.html" id="mob-assessment" role="menuitem">🔍 역량 진단</a>
   <a href="#/consultation" id="mob-consultation" role="menuitem">상담 신청</a>
   <a href="#/consultation" class="mob-cta" role="menuitem">무료 상담 신청 🥚</a>
 </div>
@@ -409,17 +426,42 @@ footer{background:#111827;color:#9ca3af;padding:60px 0 30px}
   <!-- HERO -->
   <section class="hero" style="min-height:auto;display:block;background:#fdfdfd;padding:0;overflow:hidden" aria-labelledby="hero-heading">
     <h1 id="hero-heading" class="sr-only">퍼플에그 - 초등 미래 역량 강화 프로그램</h1>
-    <!-- 실제 운영 시: 한글 파일명 '홈피 대문.png' 대신 영문 파일명(예: hero-banner.png) 권장 -->
-    <div style="width:100%;background:linear-gradient(to bottom,#fdfdfd 0%,#fdfdfd 82%,#a48fcf 82%,#a48fcf 100%);padding:0;display:flex;justify-content:center;align-items:center">
-      <img src="홈피 대문.png"
-           srcset="홈피 대문.png 1x, 홈피 대문@2x.png 2x, 홈피 대문@3x.png 3x"
-           alt="퍼플에그 미래창의교육 - AI 시대 아이 스스로 깨어나는 교육"
-           style="width:100%;max-width:1200px;height:auto;display:block;image-rendering:-webkit-optimize-contrast"
-           loading="eager">
+    <!-- CSS로 그린 히어로: 이미지 파일 없이도 항상 표시됩니다 -->
+    <div style="position:relative;width:100%;background:linear-gradient(135deg,#faf5ff 0%,#ffffff 55%,#f3e8ff 100%);padding:56px 20px 0;overflow:hidden">
+      <div style="max-width:900px;margin:0 auto;text-align:center;position:relative;z-index:2">
+        <div style="font-size:12px;font-weight:700;color:#a78bfa;letter-spacing:3px;margin-bottom:14px">✨ FUTURE CREATIVE EDUCATION ✨</div>
+        <h2 style="font-size:34px;font-weight:900;color:#111827;line-height:1.3;margin-bottom:16px;letter-spacing:-0.5px">
+          생각을 깨우고,<br>상상을 <span style="color:#7c3aed">현실</span>로!
+        </h2>
+        <p style="font-size:15px;color:#6b7280;line-height:1.8;max-width:520px;margin:0 auto 28px;padding:0 8px">
+          퍼플에그는 아이들의 무한한 상상력과<br>창의적 사고를 키워주는 미래창의교육의 친구이자 멘토입니다.
+        </p>
+        <!-- CSS로 그린 알 마스코트 -->
+        <div style="position:relative;width:160px;height:196px;margin:0 auto 12px" aria-hidden="true">
+          <!-- 별 장식 -->
+          <div style="position:absolute;top:-6px;right:-12px;font-size:30px;transform:rotate(10deg)">⭐</div>
+          <div style="position:absolute;top:40px;left:-18px;font-size:18px;opacity:.7">✨</div>
+          <!-- 알 몸통 -->
+          <div style="position:absolute;inset:0;background:linear-gradient(135deg,#a78bfa 0%,#7c3aed 100%);border-radius:50% 50% 50% 50% / 44% 44% 56% 56%;box-shadow:0 18px 40px rgba(124,58,237,.35)"></div>
+          <!-- 얼굴 흰 영역 -->
+          <div style="position:absolute;top:42%;left:50%;transform:translate(-50%,-50%);width:96px;height:82px;background:#ffffff;border-radius:50%"></div>
+          <!-- 눈 -->
+          <div style="position:absolute;top:38%;left:34%;width:12px;height:12px;background:#1f2937;border-radius:50%"></div>
+          <div style="position:absolute;top:38%;right:34%;width:12px;height:12px;background:#1f2937;border-radius:50%"></div>
+          <!-- 볼 -->
+          <div style="position:absolute;top:46%;left:24%;width:10px;height:6px;background:#fca5a5;border-radius:50%;opacity:.7"></div>
+          <div style="position:absolute;top:46%;right:24%;width:10px;height:6px;background:#fca5a5;border-radius:50%;opacity:.7"></div>
+          <!-- 입 -->
+          <div style="position:absolute;top:50%;left:50%;transform:translateX(-50%);width:20px;height:12px;background:#1f2937;border-radius:0 0 20px 20px"></div>
+        </div>
+      </div>
+      <!-- 하단 보라색 물결 -->
+      <div style="position:relative;margin-top:-20px;height:60px;background:#a48fcf;border-radius:50% 50% 0 0 / 40px 40px 0 0;z-index:1"></div>
     </div>
-    <div style="max-width:1100px;margin:0 auto;padding:40px 20px 60px;text-align:center">
+    <div style="max-width:1100px;margin:0 auto;padding:36px 20px 60px;text-align:center">
       <div class="hero-btns" style="justify-content:center;margin-bottom:24px">
         <a href="#/consultation" class="btn btn-primary">무료 상담 신청 →</a>
+        <a href="assessment.html" class="btn btn-outline">🔍 역량 진단 시작</a>
         <a href="#/programs" class="btn btn-outline">프로그램 보기</a>
       </div>
       <div class="hero-stats" style="justify-content:center">
@@ -441,15 +483,15 @@ footer{background:#111827;color:#9ca3af;padding:60px 0 30px}
       <div class="stat-grid" style="margin-bottom:40px">
         <div class="stat-card purple">
           <div class="stat-num purple">65%</div>
-          <p class="stat-desc">현재 초등학생이 성인이 되면 <strong>지금 없는 직업</strong>에 종사하게 됩니다</p>
+          <p class="stat-desc">현재 초등학생이 성인이 되면, 어른들이 예측해 본 적 없는 <strong>전혀 새로운 직업</strong>에 종사하게 됩니다</p>
         </div>
         <div class="stat-card orange">
           <div class="stat-num orange">47%</div>
           <p class="stat-desc">기존 일자리의 <strong>AI 자동화 가능성</strong><br>(옥스퍼드 연구)</p>
         </div>
         <div class="stat-card green">
-          <div class="stat-num green" style="font-size:30px">🏆 1위</div>
-          <p class="stat-desc">세계경제포럼 선정<br><strong>미래 핵심 역량: 비판적 사고력</strong></p>
+          <div class="stat-num green" style="font-size:30px">🏆 TOP 3</div>
+          <p class="stat-desc">세계경제포럼 선정 미래 핵심 역량<br><strong>🥇 비판적 사고력</strong><br><strong>🥈 창의적 표현력</strong><br><strong>🥉 회복 탄력성</strong></p>
         </div>
       </div>
       <div class="compare-table" role="table" aria-label="기존 교육과 퍼플에그 교육 비교">
@@ -489,6 +531,28 @@ footer{background:#111827;color:#9ca3af;padding:60px 0 30px}
       <div style="text-align:center;margin-top:28px">
         <a href="#/programs" class="btn btn-outline">전체 프로그램 보기 →</a>
       </div>
+    </div>
+  </section>
+
+  <!-- 역량 진단 배너 -->
+  <section style="background:linear-gradient(135deg,#f3f0ff 0%,#ede9fe 100%);padding:72px 0" aria-labelledby="diag-banner-heading">
+    <div class="container" style="text-align:center">
+      <div style="display:inline-block;background:#fff;color:#7c3aed;padding:6px 14px;border-radius:99px;font-size:26px;font-weight:500;margin-bottom:14px;font-family:'Noto Sans KR',sans-serif;letter-spacing:0.3px">🔍 무료 역량 진단</div>
+      <h2 id="diag-banner-heading" style="font-size:32px;font-weight:900;color:#111827;line-height:1.35;margin-bottom:12px;letter-spacing:-0.5px">
+        우리 아이의 <span style="color:#7c3aed">6대 미래 역량</span>,<br>지금 바로 진단해 보세요
+      </h2>
+      <p style="font-size:15px;color:#6b7280;line-height:1.8;max-width:500px;margin:0 auto 28px">
+        초등 3~4학년 학부모 대상 · 60문항 · 10~15분 소요<br>
+        소통, 회복 탄력성, 자기주도력 등 6가지 역량을 진단하고<br>
+        <strong style="color:#111827">결과를 즉시 확인</strong>하세요.
+      </p>
+      <div style="display:flex;justify-content:center;gap:16px;flex-wrap:wrap;margin-bottom:28px">
+        <div style="display:flex;align-items:center;gap:6px;font-size:13px;color:#6b7280;background:#fff;padding:8px 16px;border-radius:99px;box-shadow:0 2px 8px rgba(0,0,0,.06)">📝 <strong style="color:#111827">60문항</strong></div>
+        <div style="display:flex;align-items:center;gap:6px;font-size:13px;color:#6b7280;background:#fff;padding:8px 16px;border-radius:99px;box-shadow:0 2px 8px rgba(0,0,0,.06)">⏰ <strong style="color:#111827">10~15분</strong></div>
+        <div style="display:flex;align-items:center;gap:6px;font-size:13px;color:#6b7280;background:#fff;padding:8px 16px;border-radius:99px;box-shadow:0 2px 8px rgba(0,0,0,.06)">📊 <strong style="color:#111827">즉시 결과 확인</strong></div>
+      </div>
+      <a href="assessment.html" class="btn btn-primary" style="font-size:16px;padding:16px 40px;box-shadow:0 8px 24px rgba(124,58,237,.35)">역량 진단 시작하기 →</a>
+      <p style="font-size:12px;color:#9ca3af;margin-top:14px">응답은 외부에 저장되지 않습니다</p>
     </div>
   </section>
 
@@ -686,7 +750,23 @@ footer{background:#111827;color:#9ca3af;padding:60px 0 30px}
   <div id="admin-login-wrap" style="padding:40px 20px">
     <div class="admin-login">
       <div class="admin-login-head">
-        <img src="logo.png" alt="퍼플에그 미래창의교육" style="height:56px;width:auto;object-fit:contain;margin-bottom:12px;display:block;margin-left:auto;margin-right:auto" onerror="this.style.display='none'">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 210 64" aria-hidden="true" focusable="false" style="height:60px;width:auto;display:block;margin:0 auto 12px">
+  <!-- 별 -->
+  <polygon points="182,8 184.2,14 190.5,14 185.4,18 187.4,24 182,20.2 176.6,24 178.6,18 173.5,14 179.8,14" fill="#fbbf24"/>
+  <!-- 알 모양 마스코트 -->
+  <ellipse cx="24" cy="34" rx="20" ry="24" fill="#7c3aed"/>
+  <!-- 얼굴 흰 부분 -->
+  <ellipse cx="24" cy="38" rx="12" ry="11" fill="#ffffff"/>
+  <!-- 눈 -->
+  <circle cx="19" cy="36" r="2" fill="#1f2937"/>
+  <circle cx="29" cy="36" r="2" fill="#1f2937"/>
+  <!-- 작은 입 -->
+  <path d="M21 42 Q24 45 27 42" stroke="#1f2937" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+  <!-- 퍼플에그 텍스트 -->
+  <text x="55" y="36" font-family="'Noto Sans KR','Malgun Gothic',sans-serif" font-size="22" font-weight="900" fill="#7c3aed" letter-spacing="-0.5">퍼플에그</text>
+  <!-- 미래창의교육 서브 텍스트 -->
+  <text x="55" y="54" font-family="'Noto Sans KR','Malgun Gothic',sans-serif" font-size="11" font-weight="700" fill="#a78bfa" letter-spacing="0.5">미래창의교육</text>
+</svg>
         <h2 class="admin-login-title">관리자 로그인</h2>
         <p class="admin-login-sub">퍼플에그 관리자 전용 페이지</p>
       </div>
@@ -865,8 +945,23 @@ footer{background:#111827;color:#9ca3af;padding:60px 0 30px}
     <div class="footer-grid">
       <div>
         <button class="footer-brand" onclick="goPage('home')" aria-label="홈으로 이동">
-          <img src="logo.png" alt="퍼플에그 미래창의교육" style="height:40px;width:auto;display:block;filter:brightness(0) invert(1) opacity(.95)" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
-          <span class="footer-brand-text" style="display:none">퍼플에그</span>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 210 64" aria-hidden="true" focusable="false" style="height:44px;width:auto;display:block">
+  <!-- 별 -->
+  <polygon points="182,8 184.2,14 190.5,14 185.4,18 187.4,24 182,20.2 176.6,24 178.6,18 173.5,14 179.8,14" fill="#fbbf24"/>
+  <!-- 알 모양 마스코트 -->
+  <ellipse cx="24" cy="34" rx="20" ry="24" fill="#a78bfa"/>
+  <!-- 얼굴 흰 부분 -->
+  <ellipse cx="24" cy="38" rx="12" ry="11" fill="#ffffff"/>
+  <!-- 눈 -->
+  <circle cx="19" cy="36" r="2" fill="#1f2937"/>
+  <circle cx="29" cy="36" r="2" fill="#1f2937"/>
+  <!-- 작은 입 -->
+  <path d="M21 42 Q24 45 27 42" stroke="#1f2937" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+  <!-- 퍼플에그 텍스트 -->
+  <text x="55" y="36" font-family="'Noto Sans KR','Malgun Gothic',sans-serif" font-size="22" font-weight="900" fill="#ffffff" letter-spacing="-0.5">퍼플에그</text>
+  <!-- 미래창의교육 서브 텍스트 -->
+  <text x="55" y="54" font-family="'Noto Sans KR','Malgun Gothic',sans-serif" font-size="11" font-weight="700" fill="#c4b5fd" letter-spacing="0.5">미래창의교육</text>
+</svg>
         </button>
         <p class="footer-desc">스스로 내일을 만드는 아이들.<br>미래 역량 강화 프로그램</p>
         <div class="footer-biz">
@@ -884,6 +979,7 @@ footer{background:#111827;color:#9ca3af;padding:60px 0 30px}
           <a href="#/home">홈</a>
           <a href="#/programs">10대 프로그램</a>
           <a href="#/philosophy">교육 철학</a>
+          <a href="assessment.html">역량 진단</a>
           <a href="#/consultation">상담 신청</a>
         </div>
       </div>
